@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天王星的卫星 · Moon of Uranus</title>
+<meta name="description" content="天王星卫星的详细资料：物理与轨道参数、发现史、命名来源与影像图集，支持中英双语。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='%236fe3da'/><ellipse cx='50' cy='50' rx='46' ry='10' fill='none' stroke='%236fe3da' stroke-width='3'/></svg>">
+<style>
+:root {
+  --bg: #080b14; --bg2: #0c1120;
+  --panel: rgba(255,255,255,0.04); --panel-strong: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.10); --border-soft: rgba(255,255,255,0.06);
+  --text: #e7edf6; --muted: #96a3b8; --faint: #5f6c80;
+  --accent: #6fe3da; --accent2: #7aa8ff;
+  --c-inner: #57d6e0; --c-major: #f0b45a; --c-irregular: #b18cff;
+  --radius: 16px; --maxw: 1060px;
+  --mono: "SF Mono", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; color: var(--text);
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+  background:
+    radial-gradient(1100px 700px at 85% -8%, #15233f 0%, transparent 55%),
+    radial-gradient(900px 650px at -5% 108%, #0d2733 0%, transparent 52%),
+    var(--bg);
+  line-height: 1.7; overflow-x: hidden;
+}
+.stars { position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  box-shadow: 41vw 19vh 0 2px rgba(255,255,255,0.57),
+    9vw 68vh 0 1px rgba(255,255,255,0.39),
+    7vw 64vh 0 1px rgba(255,255,255,0.17),
+    55vw 53vh 0 1px rgba(255,255,255,0.31),
+    70vw 54vh 0 1px rgba(255,255,255,0.69),
+    15vw 28vh 0 3px rgba(255,255,255,0.56),
+    7vw 73vh 0 2px rgba(255,255,255,0.41),
+    28vw 5vh 0 2px rgba(255,255,255,0.71),
+    37vw 53vh 0 1px rgba(255,255,255,0.50),
+    73vw 39vh 0 2px rgba(255,255,255,0.68),
+    23vw 13vh 0 2px rgba(255,255,255,0.52),
+    24vw 47vh 0 1px rgba(255,255,255,0.51),
+    8vw 72vh 0 1px rgba(255,255,255,0.55),
+    63vw 87vh 0 2px rgba(255,255,255,0.43),
+    40vw 59vh 0 2px rgba(255,255,255,0.75),
+    46vw 38vh 0 1px rgba(255,255,255,0.67),
+    89vw 99vh 0 1px rgba(255,255,255,0.20),
+    38vw 67vh 0 2px rgba(255,255,255,0.72),
+    93vw 57vh 0 1px rgba(255,255,255,0.55),
+    9vw 15vh 0 2px rgba(255,255,255,0.42),
+    96vw 43vh 0 1px rgba(255,255,255,0.76),
+    53vw 5vh 0 3px rgba(255,255,255,0.20),
+    71vw 73vh 0 1px rgba(255,255,255,0.37),
+    44vw 76vh 0 2px rgba(255,255,255,0.53),
+    58vw 8vh 0 1px rgba(255,255,255,0.76),
+    60vw 89vh 0 3px rgba(255,255,255,0.19),
+    93vw 89vh 0 1px rgba(255,255,255,0.57),
+    87vw 57vh 0 1px rgba(255,255,255,0.62),
+    85vw 44vh 0 1px rgba(255,255,255,0.76),
+    45vw 21vh 0 2px rgba(255,255,255,0.23),
+    7vw 27vh 0 1px rgba(255,255,255,0.23),
+    31vw 50vh 0 2px rgba(255,255,255,0.75),
+    63vw 10vh 0 1px rgba(255,255,255,0.44),
+    70vw 35vh 0 1px rgba(255,255,255,0.68),
+    70vw 35vh 0 3px rgba(255,255,255,0.42),
+    45vw 87vh 0 2px rgba(255,255,255,0.77),
+    19vw 10vh 0 1px rgba(255,255,255,0.25),
+    84vw 29vh 0 1px rgba(255,255,255,0.47),
+    75vw 23vh 0 1px rgba(255,255,255,0.33),
+    18vw 53vh 0 2px rgba(255,255,255,0.39),
+    72vw 40vh 0 1px rgba(255,255,255,0.60),
+    65vw 79vh 0 3px rgba(255,255,255,0.59),
+    6vw 58vh 0 3px rgba(255,255,255,0.67),
+    50vw 50vh 0 2px rgba(255,255,255,0.41),
+    61vw 81vh 0 2px rgba(255,255,255,0.19),
+    8vw 26vh 0 2px rgba(255,255,255,0.26),
+    43vw 76vh 0 1px rgba(255,255,255,0.22),
+    72vw 19vh 0 2px rgba(255,255,255,0.22),
+    46vw 78vh 0 1px rgba(255,255,255,0.20),
+    26vw 78vh 0 2px rgba(255,255,255,0.25),
+    32vw 44vh 0 2px rgba(255,255,255,0.39),
+    15vw 14vh 0 2px rgba(255,255,255,0.80),
+    59vw 61vh 0 2px rgba(255,255,255,0.35),
+    18vw 13vh 0 3px rgba(255,255,255,0.37),
+    33vw 61vh 0 3px rgba(255,255,255,0.25),
+    2vw 26vh 0 2px rgba(255,255,255,0.39),
+    88vw 69vh 0 1px rgba(255,255,255,0.64),
+    38vw 82vh 0 1px rgba(255,255,255,0.60),
+    33vw 66vh 0 1px rgba(255,255,255,0.74),
+    45vw 98vh 0 1px rgba(255,255,255,0.50),
+    99vw 64vh 0 1px rgba(255,255,255,0.56),
+    78vw 100vh 0 1px rgba(255,255,255,0.67),
+    51vw 94vh 0 1px rgba(255,255,255,0.28),
+    63vw 45vh 0 3px rgba(255,255,255,0.17),
+    3vw 35vh 0 2px rgba(255,255,255,0.32),
+    88vw 77vh 0 1px rgba(255,255,255,0.44),
+    92vw 44vh 0 1px rgba(255,255,255,0.20),
+    13vw 29vh 0 2px rgba(255,255,255,0.28),
+    26vw 61vh 0 2px rgba(255,255,255,0.79),
+    78vw 0vh 0 2px rgba(255,255,255,0.74),
+    44vw 82vh 0 1px rgba(255,255,255,0.69),
+    15vw 49vh 0 3px rgba(255,255,255,0.64),
+    61vw 22vh 0 2px rgba(255,255,255,0.66),
+    42vw 11vh 0 3px rgba(255,255,255,0.41),
+    51vw 95vh 0 1px rgba(255,255,255,0.62),
+    21vw 16vh 0 1px rgba(255,255,255,0.25),
+    59vw 83vh 0 1px rgba(255,255,255,0.55),
+    76vw 60vh 0 3px rgba(255,255,255,0.76),
+    19vw 70vh 0 2px rgba(255,255,255,0.24),
+    1vw 92vh 0 3px rgba(255,255,255,0.22),
+    95vw 17vh 0 2px rgba(255,255,255,0.79),
+    24vw 27vh 0 1px rgba(255,255,255,0.31),
+    37vw 64vh 0 1px rgba(255,255,255,0.65),
+    41vw 33vh 0 2px rgba(255,255,255,0.42),
+    16vw 7vh 0 3px rgba(255,255,255,0.38),
+    58vw 84vh 0 2px rgba(255,255,255,0.68),
+    66vw 53vh 0 2px rgba(255,255,255,0.23),
+    19vw 67vh 0 2px rgba(255,255,255,0.16),
+    56vw 99vh 0 1px rgba(255,255,255,0.55),
+    99vw 19vh 0 1px rgba(255,255,255,0.24),
+    79vw 92vh 0 1px rgba(255,255,255,0.51),
+    41vw 87vh 0 2px rgba(255,255,255,0.49),
+    61vw 100vh 0 1px rgba(255,255,255,0.72),
+    7vw 31vh 0 1px rgba(255,255,255,0.33),
+    98vw 12vh 0 2px rgba(255,255,255,0.44),
+    3vw 97vh 0 1px rgba(255,255,255,0.44),
+    78vw 64vh 0 2px rgba(255,255,255,0.48),
+    88vw 35vh 0 2px rgba(255,255,255,0.48),
+    61vw 64vh 0 1px rgba(255,255,255,0.60),
+    33vw 71vh 0 1px rgba(255,255,255,0.70),
+    17vw 53vh 0 1px rgba(255,255,255,0.41),
+    40vw 9vh 0 3px rgba(255,255,255,0.31),
+    9vw 27vh 0 3px rgba(255,255,255,0.35),
+    15vw 99vh 0 1px rgba(255,255,255,0.76),
+    82vw 84vh 0 1px rgba(255,255,255,0.24),
+    17vw 59vh 0 1px rgba(255,255,255,0.64),
+    12vw 50vh 0 2px rgba(255,255,255,0.26),
+    85vw 28vh 0 1px rgba(255,255,255,0.61),
+    65vw 51vh 0 1px rgba(255,255,255,0.42),
+    45vw 40vh 0 1px rgba(255,255,255,0.62),
+    2vw 43vh 0 2px rgba(255,255,255,0.45),
+    90vw 2vh 0 2px rgba(255,255,255,0.37),
+    79vw 37vh 0 2px rgba(255,255,255,0.77),
+    14vw 100vh 0 1px rgba(255,255,255,0.78),
+    13vw 10vh 0 1px rgba(255,255,255,0.33),
+    99vw 23vh 0 1px rgba(255,255,255,0.64),
+    54vw 86vh 0 1px rgba(255,255,255,0.41),
+    68vw 65vh 0 2px rgba(255,255,255,0.47),
+    41vw 11vh 0 1px rgba(255,255,255,0.19),
+    88vw 23vh 0 2px rgba(255,255,255,0.73),
+    34vw 2vh 0 3px rgba(255,255,255,0.21),
+    33vw 10vh 0 2px rgba(255,255,255,0.71),
+    8vw 33vh 0 1px rgba(255,255,255,0.44),
+    43vw 70vh 0 2px rgba(255,255,255,0.75),
+    34vw 79vh 0 1px rgba(255,255,255,0.18),
+    90vw 30vh 0 1px rgba(255,255,255,0.78),
+    33vw 6vh 0 1px rgba(255,255,255,0.28),
+    39vw 80vh 0 1px rgba(255,255,255,0.50),
+    26vw 37vh 0 2px rgba(255,255,255,0.48),
+    22vw 34vh 0 1px rgba(255,255,255,0.67),
+    32vw 4vh 0 1px rgba(255,255,255,0.16),
+    64vw 70vh 0 1px rgba(255,255,255,0.48),
+    31vw 57vh 0 1px rgba(255,255,255,0.58),
+    83vw 55vh 0 3px rgba(255,255,255,0.47),
+    50vw 64vh 0 1px rgba(255,255,255,0.60),
+    29vw 43vh 0 1px rgba(255,255,255,0.69),
+    90vw 93vh 0 3px rgba(255,255,255,0.24),
+    44vw 6vh 0 1px rgba(255,255,255,0.16),
+    80vw 94vh 0 1px rgba(255,255,255,0.43),
+    7vw 10vh 0 3px rgba(255,255,255,0.70); width: 2px; height: 2px; border-radius: 50%; }
+a { color: var(--accent); text-decoration: none; }
+
+nav {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 26px; backdrop-filter: blur(14px) saturate(140%);
+  background: rgba(8,11,20,0.72); border-bottom: 1px solid var(--border-soft);
+}
+nav .back { color: var(--text); font-size: 14px; font-weight: 600; padding: 6px 12px;
+  border-radius: 8px; transition: .2s; }
+nav .back:hover { background: var(--panel); color: var(--accent); }
+nav .spacer { flex: 1; }
+.lang-toggle { display: inline-flex; align-items: center; gap: 2px;
+  border: 1px solid var(--border); border-radius: 999px; overflow: hidden;
+  background: var(--panel); font-size: 13px; font-weight: 600; }
+.lang-toggle button { border: 0; background: transparent; color: var(--muted);
+  padding: 6px 14px; cursor: pointer; font-size: 13px; font-family: inherit; transition: .2s; }
+.lang-toggle button.on { background: var(--accent); color: #04201e; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; }
+
+.moon-head { padding: 46px 28px 30px; }
+.moon-head .crumb { font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+.moon-head h1 { margin: 0 0 12px; font-size: clamp(34px, 5.6vw, 58px); letter-spacing: 1px;
+  line-height: 1.1; font-weight: 800; }
+.moon-head h1 .en { color: var(--muted); font-weight: 400; font-size: .48em; letter-spacing: 2px; margin-left: 10px; }
+.tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .4px;
+  padding: 4px 12px; border-radius: 999px; }
+.tag.major { background: rgba(240,180,90,.14); color: var(--c-major); }
+.tag.inner { background: rgba(87,214,224,.14); color: var(--c-inner); }
+.tag.irregular { background: rgba(177,140,255,.14); color: var(--c-irregular); }
+
+.moon-body { padding: 20px 28px 40px; }
+.moon-grid { display: grid; grid-template-columns: minmax(280px, 0.9fr) 1.1fr; gap: 34px; align-items: start; }
+.moon-figure { position: sticky; top: 80px; background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; box-shadow: 0 24px 70px rgba(0,0,0,.5); }
+.moon-figure img { width: 100%; height: auto; display: block; aspect-ratio: 1/1; object-fit: cover; }
+.moon-figure .noimg { display: grid; place-items: center; aspect-ratio: 1/1; color: var(--faint); font-size: 14px; }
+.moon-info h2 { font-size: 15px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent);
+  margin: 0 0 12px; font-weight: 700; }
+.moon-info h2:not(:first-child) { margin-top: 30px; }
+.long-desc { color: #c2cbdb; font-size: 15.5px; margin: 0 0 6px; }
+.data-table { display: grid; grid-template-columns: 150px 1fr; gap: 0; border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; background: var(--panel); }
+.data-table dt { padding: 11px 16px; font-size: 12.5px; color: var(--faint);
+  letter-spacing: .4px; border-bottom: 1px solid var(--border-soft); border-right: 1px solid var(--border-soft); }
+.data-table dd { margin: 0; padding: 11px 16px; font-size: 14.5px; font-weight: 500;
+  border-bottom: 1px solid var(--border-soft); font-variant-numeric: tabular-nums; }
+.data-table dt:nth-last-child(2), .data-table dd:last-child { border-bottom: 0; }
+
+.moon-gallery { padding: 40px 28px 50px; }
+.sec-head { margin-bottom: 24px; }
+.sec-head .kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.sec-head h2 { font-size: clamp(22px, 3vw, 30px); margin: 0; letter-spacing: .5px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; }
+.g-item { margin: 0; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; transition: transform .22s ease, border-color .22s ease; }
+.g-item:hover { transform: translateY(-4px); border-color: var(--accent2); }
+.g-img { aspect-ratio: 1/1; overflow: hidden; background: #05070d; }
+.g-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.g-item figcaption { padding: 12px 14px; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+.no-gallery { color: var(--faint); font-size: 14px; }
+
+.moon-nav { padding: 10px 28px 20px; }
+.nav-row { display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  flex-wrap: wrap; }
+.nav-link { display: flex; align-items: baseline; gap: 10px; padding: 14px 20px;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+  color: var(--text); font-size: 14px; transition: .2s; }
+.nav-link:hover { border-color: var(--accent2); background: var(--panel-strong); }
+.nav-link .dir { color: var(--muted); font-size: 12.5px; }
+.nav-link b { font-size: 16px; font-weight: 700; }
+.nav-all { color: var(--muted); font-size: 13.5px; padding: 6px 10px; }
+.nav-all:hover { color: var(--accent); }
+
+footer { border-top: 1px solid var(--border-soft); padding: 34px 28px 46px; color: var(--muted);
+  font-size: 12.5px; text-align: center; }
+footer p { margin: 4px 0; }
+
+@media (max-width: 780px) {
+  .moon-grid { grid-template-columns: 1fr; }
+  .moon-figure { position: static; }
+  .data-table { grid-template-columns: 120px 1fr; }
+  .nav-link b { display: block; }
+}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+
+<nav>
+  <a class="back" href="index.html">&#8592; <span data-i18n="back">返回主页</span></a>
+  <div class="spacer"></div>
+  <div class="lang-toggle">
+    <button id="btnZh" class="on">中文</button>
+    <button id="btnEn">EN</button>
+  </div>
+</nav>
+
+<main>
+  <header class="moon-head">
+    <div class="wrap">
+      <div class="crumb" data-i18n="of_uranus">天王星的卫星</div>
+      <h1 id="moonName"></h1>
+      <span class="tag major" id="moonNote"></span>
+    </div>
+  </header>
+
+  <section class="moon-body">
+    <div class="wrap">
+      <div class="moon-grid">
+        <figure class="moon-figure" id="moonFigure"></figure>
+        <div class="moon-info">
+          <h2 data-i18n="overview_title">简介</h2>
+          <p class="long-desc" id="moonDesc"></p>
+          <h2 data-i18n="data_title">物理与轨道参数</h2>
+          <dl class="data-table" id="dataTable"></dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="moon-gallery">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker" data-i18n="gallery_k">影像</div>
+        <h2 data-i18n="gallery_title">影像图集</h2>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <section class="moon-nav">
+    <div class="wrap nav-row">
+      <a id="prevLink" class="nav-link" href="#">&#8592; <span class="dir" data-i18n="prev">上一颗</span><b id="prevName"></b></a>
+      <a class="nav-all" href="index.html" data-i18n="all_moons">查看全部卫星</a>
+      <a id="nextLink" class="nav-link" href="#"><b id="nextName"></b><span class="dir" data-i18n="next">下一颗</span> &#8594;</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p data-i18n="credit">影像来源：NASA / 旅行者 2 号等（公共领域）。</p>
+  <p data-i18n="footer_ref">数据参考：NASA 行星事实表、维基百科“天王星的卫星”（截至 2025 年）。</p>
+</footer>
+
+<script>
+const MOONS = [{"id": "miranda", "name": {"zh": "米兰达", "en": "Miranda"}, "group": "major", "img": "img/miranda.jpg", "diam": "471.6 km", "axis": "129,846 km", "period": {"zh": "1.41 天", "en": "1.41 d"}, "discovered": {"zh": "1948 · 杰拉德·柯伊伯", "en": "1948 · Gerard Kuiper"}, "note": {"zh": "天卫五", "en": "Uranus V"}, "desc": {"zh": "五颗主卫星中最小的一颗，表面却极其破碎、地质历史复杂。其“维罗纳断崖”（Verona Rupes）高达约 20 公里，是太阳系已知最高的悬崖；巨大的人字形（chevron）地貌与混杂的断裂地形，暗示它可能经历过剧烈的撞击碎裂与重新拼合。", "en": "The smallest of the five major moons, Miranda has a remarkably fractured surface and a complex history. Its Verona Rupes cliff rises about 20 km — the tallest known cliff in the Solar System — while giant chevron-shaped features and chaotic faulted terrain hint at a violent past of shattering and re-accretion."}, "roman": "V", "pron": "/məˈrændə/", "magn": "3.5", "mass": "6,293", "incl": "4.421°", "ecc": "0.0014", "dims": "481 × 468 × 466 km", "diam_precise": "471.6 ± 1.4 km", "announced": "1948", "disc_year": "1948", "retro": false, "discoverer": {"zh": "杰拉德·柯伊伯", "en": "Gerard Kuiper"}, "naming": {"zh": "莎士比亚《暴风雨》中普洛斯彼罗的女儿", "en": "Prospero's daughter in Shakespeare's The Tempest"}, "long_desc": {"zh": "天王星五颗主卫星中最小、也最靠内的一颗，直径仅约 472 公里，却是太阳系中地质最复杂的天体之一。它的表面由截然不同的地形拼合而成——高反照率的起伏丘陵、低平的撞击平原，以及三个巨大的卵形“王冠”（coronae）地貌：阿登（Arden）、埃尔西诺（Elsinore）与因弗内斯（Inverness）。其中最震撼的是维罗纳断崖（Verona Rupes），落差高达约 20 公里，是太阳系已知最高的悬崖——若从崖顶自由下落，约需 12 分钟才能触底。这种新老地形混杂的格局，暗示米兰达可能曾遭巨大撞击而彻底碎裂，随后又在引力作用下重新拼合。它由杰拉德·柯伊伯于 1948 年发现，是天王星主卫星中唯一由美国天文学家发现的一颗。", "en": "The smallest and innermost of Uranus's five major moons, at only ~472 km across, Miranda is nonetheless one of the most geologically complex bodies in the Solar System. Its surface is a patchwork of strikingly different terrains — bright rolling hills, low cratered plains, and three huge ovoid 'coronae' (Arden, Elsinore and Inverness). Most dramatic is Verona Rupes, a cliff rising about 20 km — the tallest known cliff in the Solar System — from whose top a free-falling object would take roughly 12 minutes to reach the bottom. This mix of ancient and young terrain suggests Miranda may once have been shattered by a giant impact and re-accreted. Discovered in 1948 by Gerard Kuiper, it is the only major Uranian moon found by an American astronomer."}, "gallery": [{"img": "img/miranda_2.jpg", "zh": "米兰达最高分辨率彩色影像", "en": "Highest-resolution colour image"}, {"img": "img/miranda_3.jpg", "zh": "米兰达高分辨率马赛克", "en": "High-resolution mosaic"}, {"img": "img/miranda_4.jpg", "zh": "米兰达大断层特写", "en": "Large fault close-up"}]}, {"id": "ariel", "name": {"zh": "阿里尔", "en": "Ariel"}, "group": "major", "img": "img/ariel.jpg", "diam": "1,157.8 km", "axis": "190,929 km", "period": {"zh": "2.52 天", "en": "2.52 d"}, "discovered": {"zh": "1851 · 威廉·拉塞尔", "en": "1851 · William Lassell"}, "note": {"zh": "天卫一", "en": "Uranus I"}, "desc": {"zh": "五颗主卫星中表面最亮、也最年轻的一颗。遍布深邃的峡谷与裂谷，冰与岩石混合，平坦谷底暗示可能存在过（甚至仍在进行）的冰火山活动，是研究天王星卫星地质演化的关键对象。", "en": "The brightest and youngest surface among the major moons. Ariel is crossed by deep canyons and rift valleys of mixed ice and rock; smooth valley floors hint at past — possibly ongoing — cryovolcanic activity, making it key to understanding the moons' geological evolution."}, "roman": "I", "pron": "/ˈɛəriəl/", "magn": "1.0", "mass": "123,310", "incl": "0.026°", "ecc": "0.0014", "dims": "1162 × 1156 × 1155 km", "diam_precise": "1157.8 ± 1.2 km", "announced": "1851", "disc_year": "1851", "retro": false, "discoverer": {"zh": "威廉·拉塞尔", "en": "William Lassell"}, "naming": {"zh": "莎士比亚《暴风雨》中的空气精灵", "en": "the airy spirit in Shakespeare's The Tempest"}, "long_desc": {"zh": "天王星主卫星中表面最亮、也最年轻的一颗，直径约 1,158 公里。其表面遍布深邃的峡谷与裂谷系统（chasmata），纵横交错的断层切割出壮观的崖壁与凹槽；许多谷底异常平坦，暗示曾（甚至可能仍在）发生冰火山活动——低温的冰-氨熔体涌出并填平了低地。与姐妹们相比，阿丽尔的撞击坑明显偏少，说明它的地表经历过较年轻的地质重塑。它由威廉·拉塞尔于 1851 年发现（与乌姆柏里厄尔同年），以《暴风雨》中的空气精灵命名。", "en": "The brightest and youngest-surfaced of Uranus's major moons, at ~1,158 km across. Ariel is crossed by a network of deep canyons and rift valleys (chasmata), whose intersecting faults carve spectacular cliffs and grooves; many valley floors are remarkably smooth, hinting at past — possibly ongoing — cryovolcanism, in which low-temperature ice–ammonia melts welled up and resurfaced the lowlands. Its crater count is conspicuously lower than its sisters', pointing to comparatively recent geological resurfacing. Discovered in 1851 by William Lassell (the same year as Umbriel), it is named after the airy spirit in The Tempest."}, "gallery": [{"img": "img/ariel_2.jpg", "zh": "阿里尔最近距离影像", "en": "Voyager closest approach"}, {"img": "img/ariel_3.jpg", "zh": "阿里尔最高分辨率彩色影像", "en": "Highest-resolution colour image"}]}, {"id": "umbriel", "name": {"zh": "乌姆柏里厄尔", "en": "Umbriel"}, "group": "major", "img": "img/umbriel.jpg", "diam": "1,169.4 km", "axis": "265,986 km", "period": {"zh": "4.14 天", "en": "4.14 d"}, "discovered": {"zh": "1851 · 威廉·拉塞尔", "en": "1851 · William Lassell"}, "note": {"zh": "天卫二", "en": "Uranus II"}, "desc": {"zh": "五颗主卫星中最暗的一颗，表面古老而布满撞击坑。最醒目的特征是沃达撞击坑（Wunda）——坑底有一圈明亮的高反照率物质，在暗色地表上格外耀眼，成因至今仍是个谜。", "en": "The darkest of the five major moons, Umbriel has an ancient, heavily cratered surface. Its most striking feature is the crater Wunda, whose floor bears a bright ring of high-albedo material that stands out sharply against the dark terrain — its origin remains a mystery."}, "roman": "II", "pron": "/ˈʌmbriəl/", "magn": "1.7", "mass": "128,850", "incl": "0.083°", "ecc": "0.0039", "dims": "", "diam_precise": "1169.4 ± 5.6 km", "announced": "1851", "disc_year": "1851", "retro": false, "discoverer": {"zh": "威廉·拉塞尔", "en": "William Lassell"}, "naming": {"zh": "蒲柏《夺发记》中忧郁的叹息精灵", "en": "the dusky melancholy sprite in Pope's The Rape of the Lock"}, "long_desc": {"zh": "五颗主卫星中最暗的一颗，直径约 1,169 公里，表面古老、黯淡（反照率仅约 0.1），遍布撞击坑。最引人注目的是沃达撞击坑（Wunda）：坑底铺着一圈明亮的高反照率物质——一个直径约 140 公里的白色亮环，在黑暗的地表上格外耀眼，其成因至今尚无定论。它由威廉·拉塞尔于 1851 年发现，以蒲柏长诗《夺发记》中“忧郁的叹息精灵”命名。", "en": "The darkest of the five major moons, at ~1,169 km across, with an old, dim surface (albedo only ~0.1) pockmarked by craters. Its most striking feature is the crater Wunda, whose floor is ringed by bright, high-albedo material — a roughly 140-km white halo that stands out vividly against the dark terrain, and whose origin remains unresolved. Discovered in 1851 by William Lassell, it is named after the 'dusky melancholy sprite' in Pope's The Rape of the Lock."}, "gallery": [{"img": "img/umbriel_2.jpg", "zh": "乌姆柏里厄尔最近距离影像", "en": "Closest approach"}]}, {"id": "titania", "name": {"zh": "泰坦尼亚", "en": "Titania"}, "group": "major", "img": "img/titania.jpg", "diam": "1,576.8 km", "axis": "436,298 km", "period": {"zh": "8.71 天", "en": "8.71 d"}, "discovered": {"zh": "1787 · 威廉·赫歇尔", "en": "1787 · William Herschel"}, "note": {"zh": "天卫三", "en": "Uranus III"}, "desc": {"zh": "天王星最大的卫星，也是太阳系第八大卫星。表面有长达千公里的巨大峡谷断层（如墨西拿峡谷 Messina Chasma），并可能有冰火山活动的痕迹，整体由冰与岩石大致各半组成。", "en": "The largest moon of Uranus and the eighth-largest in the Solar System. Titania is cut by enormous canyon systems up to a thousand kilometres long (e.g. Messina Chasma) and shows possible signs of cryovolcanism, being composed of roughly equal parts ice and rock."}, "roman": "III", "pron": "/təˈtɑːniə/", "magn": "0.8", "mass": "345,500", "incl": "0.114°", "ecc": "0.0016", "dims": "", "diam_precise": "1576.8 ± 1.2 km", "announced": "1787", "disc_year": "1787", "retro": false, "discoverer": {"zh": "威廉·赫歇尔", "en": "William Herschel"}, "naming": {"zh": "莎士比亚《仲夏夜之梦》中的仙后", "en": "the Fairy Queen in Shakespeare's A Midsummer Night's Dream"}, "long_desc": {"zh": "天王星最大的卫星，也是太阳系第八大卫星，直径约 1,577 公里，由冰与岩石大致各半构成。它被多条巨大的峡谷断层切割，其中最壮观的是墨西拿峡谷（Messina Chasma），绵延约 1,500 公里，长度接近地球月球的半径。表面撞击坑与断层交错，局部地形暗示可能存在过冰火山活动。它由威廉·赫歇尔于 1787 年与欧贝隆同日发现，是天王星最早被发现的卫星，以《仲夏夜之梦》中的仙后命名。", "en": "The largest moon of Uranus and the eighth-largest in the Solar System, at ~1,577 km across, composed of roughly equal parts ice and rock. It is carved by several great canyon systems, the grandest being Messina Chasma, which stretches some 1,500 km — nearly the radius of Earth's Moon. Craters and faults criss-cross its surface, with local relief suggesting possible past cryovolcanism. Discovered by William Herschel in 1787 (on the same night as Oberon), it was the first Uranian moon ever found, and is named after the Fairy Queen in A Midsummer Night's Dream."}, "gallery": [{"img": "img/titania_2.jpg", "zh": "泰坦尼亚高分辨率彩色合成", "en": "High-resolution colour composite"}, {"img": "img/titania_3.jpg", "zh": "泰坦尼亚最高分辨率影像", "en": "Highest-resolution image"}]}, {"id": "oberon", "name": {"zh": "欧贝隆", "en": "Oberon"}, "group": "major", "img": "img/oberon.jpg", "diam": "1,522.8 km", "axis": "583,511 km", "period": {"zh": "13.46 天", "en": "13.46 d"}, "discovered": {"zh": "1787 · 威廉·赫歇尔", "en": "1787 · William Herschel"}, "note": {"zh": "天卫四", "en": "Uranus IV"}, "desc": {"zh": "五颗主卫星中离天王星最远的一颗，表面古老、撞击坑密布，坑底常见暗色沉积物，部分大坑中央又有高反差的明亮物质，显示出复杂而悠久的撞击历史。", "en": "The outermost of the major moons, Oberon has an old, densely cratered surface. Many craters hold dark deposits on their floors, while some large craters show bright material at their centres, recording a long and complex impact history."}, "roman": "IV", "pron": "/ˈoʊbərɒn/", "magn": "1.0", "mass": "311,040", "incl": "0.125°", "ecc": "0.0016", "dims": "", "diam_precise": "1522.8 ± 5.2 km", "announced": "1787", "disc_year": "1787", "retro": false, "discoverer": {"zh": "威廉·赫歇尔", "en": "William Herschel"}, "naming": {"zh": "莎士比亚《仲夏夜之梦》中的仙王", "en": "the Fairy King in Shakespeare's A Midsummer Night's Dream"}, "long_desc": {"zh": "五颗主卫星中离天王星最远的一颗，直径约 1,523 公里，表面古老，撞击坑极为密集。许多大坑的坑底覆盖着暗色物质——一种富含有机物的“脏冰”沉积，可能是从卫星内部涌出的液态水所携带；部分大坑中央又出现明亮的高反照率物质，显示出复杂而悠久的撞击与地质历史。它由威廉·赫歇尔于 1787 年发现，以《仲夏夜之梦》中的仙王命名。", "en": "The outermost of the five major moons, at ~1,523 km across, with an ancient surface so densely cratered it appears saturated. Many large craters hold dark deposits on their floors — 'dirty ice' rich in organic material, possibly emplaced by liquid water welling up from the interior — while some craters show bright material at their centres, recording a long and complex impact history. Discovered by William Herschel in 1787, it is named after the Fairy King in A Midsummer Night's Dream."}, "gallery": [{"img": "img/oberon_2.jpg", "zh": "欧贝隆最近距离影像", "en": "Voyager closest approach"}]}, {"id": "cordelia", "name": {"zh": "考狄利娅", "en": "Cordelia"}, "group": "inner", "img": "img/cordelia.jpg", "diam": "40 km", "axis": "49,755 km", "period": {"zh": "0.33 天", "en": "0.33 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "ε 环内牧羊卫星", "en": "ε-ring inner shepherd"}, "desc": {"zh": "ε 环的内侧牧羊卫星，与奥菲莉亚一起用引力把 ε 环约束在狭窄范围内。", "en": "Inner shepherd moon of the ε ring; together with Ophelia its gravity keeps the ring confined to a narrow band."}, "roman": "VI", "pron": "/kɔːrˈdiːliə/", "magn": "10.3", "mass": "6.08", "incl": "0.2°", "ecc": "0.0003", "dims": "50 × 36 km", "diam_precise": "40 ± 6 km", "announced": "1986", "disc_year": "1986", "retro": false, "discoverer": {"zh": "理查德·特里尔（旅行者 2 号）", "en": "Richard Terrile (Voyager 2)"}, "naming": {"zh": "莎士比亚《李尔王》中李尔王的幼女", "en": "the youngest daughter of King Lear"}, "gallery": []}, {"id": "ophelia", "name": {"zh": "奥菲莉亚", "en": "Ophelia"}, "group": "inner", "img": "img/ophelia.png", "diam": "43 km", "axis": "53,765 km", "period": {"zh": "0.38 天", "en": "0.38 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "ε 环外牧羊卫星", "en": "ε-ring outer shepherd"}, "desc": {"zh": "ε 环的外侧牧羊卫星，与考狄利娅共同维持光环的形状。", "en": "Outer shepherd moon of the ε ring, helping Cordelia maintain the ring's shape."}, "roman": "VII", "pron": "/oʊˈfiːliə/", "magn": "10.2", "mass": "3.57", "incl": "0.2°", "ecc": "0.011", "dims": "54 × 38 km", "diam_precise": "43 ± 8 km", "announced": "1986", "disc_year": "1986", "retro": false, "discoverer": {"zh": "理查德·特里尔（旅行者 2 号）", "en": "Richard Terrile (Voyager 2)"}, "naming": {"zh": "莎士比亚《哈姆雷特》中波洛涅斯之女", "en": "daughter of Polonius in Hamlet"}, "gallery": []}, {"id": "s2025u1", "name": {"zh": "S/2025 U1", "en": "S/2025 U1"}, "group": "inner", "img": "img/s2025u1.jpg", "diam": "≈8–10 km", "axis": "57,844 km", "period": {"zh": "0.42 天", "en": "0.42 d"}, "discovered": {"zh": "2025 · 韦布空间望远镜", "en": "2025 · JWST"}, "note": {"zh": "尚未命名", "en": "unnamed"}, "desc": {"zh": "2025 年由韦布空间望远镜（JWST）发现的新内卫星，尚未正式命名。", "en": "A new inner moon discovered in 2025 by the James Webb Space Telescope; not yet named."}, "roman": "XXVIII", "pron": "", "magn": "≈ 13.6", "mass": "≈ 0.04", "incl": "4.0°", "ecc": "0.039", "dims": "", "diam_precise": "≈ 8–10 km", "announced": "2025", "disc_year": "2025", "retro": false, "discoverer": {"zh": "穆斯塔法·埃尔·穆塔米德等（韦布空间望远镜）", "en": "M. El Moutamid et al. (JWST)"}, "naming": {"zh": "尚未正式命名", "en": "not yet formally named"}, "gallery": []}, {"id": "bianca", "name": {"zh": "比安卡", "en": "Bianca"}, "group": "inner", "img": "img/bianca.png", "diam": "51 km", "axis": "59,170 km", "period": {"zh": "0.43 天", "en": "0.43 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群（Portia group）成员，一组轨道相近的小卫星。", "en": "Member of the Portia group, a cluster of small moons on similar orbits."}, "roman": "VIII", "pron": "/biˈɑːŋkə/", "magn": "9.8", "mass": "≈ 6.9", "incl": "2.3°", "ecc": "0.006", "dims": "64 × 46 km", "diam_precise": "51 ± 4 km", "announced": "1986", "disc_year": "1986", "retro": false, "discoverer": {"zh": "布拉德福德·史密斯（旅行者 2 号）", "en": "Bradford A. Smith (Voyager 2)"}, "naming": {"zh": "莎士比亚《驯悍记》中的人物", "en": "a character in The Taming of the Shrew"}, "gallery": []}, {"id": "cressida", "name": {"zh": "克瑞西达", "en": "Cressida"}, "group": "inner", "img": "img/cressida.png", "diam": "80 km", "axis": "61,770 km", "period": {"zh": "0.46 天", "en": "0.46 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群成员。", "en": "Member of the Portia group."}, "roman": "IX", "pron": "/ˈkrɛsədə/", "magn": "8.9", "mass": "18.39", "incl": "1.8°", "ecc": "0.004", "dims": "92 × 74 km", "diam_precise": "80 ± 4 km", "announced": "1986", "disc_year": "1986", "retro": false, "discoverer": {"zh": "斯蒂芬·辛诺特（旅行者 2 号）", "en": "Stephen Synnott (Voyager 2)"}, "naming": {"zh": "莎士比亚《特洛伊罗斯与克瑞西达》中的女主角", "en": "heroine of Troilus and Cressida"}, "gallery": []}, {"id": "desdemona", "name": {"zh": "苔丝狄蒙娜", "en": "Desdemona"}, "group": "inner", "img": "img/desdemona.png", "diam": "64 km", "axis": "62,663 km", "period": {"zh": "0.47 天", "en": "0.47 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群成员。", "en": "Member of the Portia group."}, "roman": "X", "pron": "/ˌdɛzdəˈmoʊnə/", "magn": "9.3", "mass": "≈ 14", "incl": "3.1°", "ecc": "0.007", "dims": "90 × 54 km", "diam_precise": "64 ± 8 km", "announced": "1986", "disc_year": "1986", "retro": false, "discoverer": {"zh": "斯蒂芬·辛诺特（旅行者 2 号）", "en": "Stephen Synnott (Voyager 2)"}, "naming": {"zh": "莎士比亚《奥赛罗》中奥赛罗之妻", "en": "wife of Othello"}, "gallery": []}, {"id": "juliet", "name": {"zh": "朱丽叶", "en": "Juliet"}, "group": "inner", "img": "img/juliet.png", "diam": "94 km", "axis": "64,362 km", "period": {"zh": "0.49 天", "en": "0.49 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群成员。", "en": "Member of the Portia group."}, "roman": "XI", "pron": "/ˈdʒuːliət/", "magn": "8.5", "mass": "≈ 43", "incl": "3.0°", "ecc": "0.006", "dims": "150 × 74 km", "diam_precise": "94 ± 8 km", "announced": "1986", "disc_year": "1986", "retro": false, "discoverer": {"zh": "斯蒂芬·辛诺特（旅行者 2 号）", "en": "Stephen Synnott (Voyager 2)"}, "naming": {"zh": "莎士比亚《罗密欧与朱丽叶》中的女主角", "en": "heroine of Romeo and Juliet"}, "gallery": []}, {"id": "portia", "name": {"zh": "波西亚", "en": "Portia"}, "group": "inner", "img": "img/portia.jpg", "diam": "135 km", "axis": "66,101 km", "period": {"zh": "0.51 天", "en": "0.51 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群中最大的一颗，该群因此得名。", "en": "The largest of the Portia group, after which the cluster is named."}, "roman": "XII", "pron": "/ˈpɔːrʃə/", "magn": "7.7", "mass": "≈ 130", "incl": "2.7°", "ecc": "0.004", "dims": "156 × 126 km", "diam_precise": "135 ± 8 km", "announced": "1986", "disc_year": "1986", "retro": false, "discoverer": {"zh": "斯蒂芬·辛诺特（旅行者 2 号）", "en": "Stephen Synnott (Voyager 2)"}, "naming": {"zh": "莎士比亚《威尼斯商人》中的女主角", "en": "heroine of The Merchant of Venice"}, "gallery": []}, {"id": "rosalind", "name": {"zh": "罗莎琳德", "en": "Rosalind"}, "group": "inner", "img": "img/rosalind.png", "diam": "72 km", "axis": "69,930 km", "period": {"zh": "0.56 天", "en": "0.56 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群成员。", "en": "Member of the Portia group."}, "roman": "XIII", "pron": "/ˈrɒzələnd/", "magn": "9.1", "mass": "≈ 20", "incl": "1.7°", "ecc": "0.003", "dims": "", "diam_precise": "72 ± 12 km", "announced": "1986", "disc_year": "1986", "retro": false, "discoverer": {"zh": "斯蒂芬·辛诺特（旅行者 2 号）", "en": "Stephen Synnott (Voyager 2)"}, "naming": {"zh": "莎士比亚《皆大欢喜》中的女主角", "en": "heroine of As You Like It"}, "gallery": []}, {"id": "cupid", "name": {"zh": "丘比特", "en": "Cupid"}, "group": "inner", "img": "img/cupid.png", "diam": "≈18 km", "axis": "74,396 km", "period": {"zh": "0.61 天", "en": "0.61 d"}, "discovered": {"zh": "2003 · 哈勃空间望远镜", "en": "2003 · Hubble"}, "note": {"zh": "贝琳达群", "en": "Belinda group"}, "desc": {"zh": "已知最小的内卫星之一，由哈勃空间望远镜发现。", "en": "Among the smallest inner moons, discovered with the Hubble Space Telescope."}, "roman": "XXVII", "pron": "/ˈkjuːpəd/", "magn": "12.6", "mass": "≈ 0.31", "incl": "2.0°", "ecc": "0.007", "dims": "", "diam_precise": "≈ 18 km", "announced": "2003", "disc_year": "2003", "retro": false, "discoverer": {"zh": "马克·肖沃尔特与杰克·利绍尔（哈勃空间望远镜）", "en": "Mark Showalter & Jack Lissauer (HST)"}, "naming": {"zh": "莎士比亚《雅典的泰门》中的丘比特", "en": "Cupid in Timon of Athens"}, "gallery": []}, {"id": "belinda", "name": {"zh": "贝琳达", "en": "Belinda"}, "group": "inner", "img": "img/belinda.png", "diam": "90 km", "axis": "75,258 km", "period": {"zh": "0.62 天", "en": "0.62 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "贝琳达群", "en": "Belinda group"}, "desc": {"zh": "贝琳达群成员。", "en": "Member of the Belinda group."}, "roman": "XIV", "pron": "/bəˈlɪndə/", "magn": "8.8", "mass": "≈ 38", "incl": "1.4°", "ecc": "0.002", "dims": "128 × 64 km", "diam_precise": "90 ± 16 km", "announced": "1986", "disc_year": "1986", "retro": false, "discoverer": {"zh": "斯蒂芬·辛诺特（旅行者 2 号）", "en": "Stephen Synnott (Voyager 2)"}, "naming": {"zh": "蒲柏《夺发记》中的女主角", "en": "heroine of Pope's The Rape of the Lock"}, "gallery": []}, {"id": "perdita", "name": {"zh": "珀迪塔", "en": "Perdita"}, "group": "inner", "img": "img/perdita.png", "diam": "30 km", "axis": "76,418 km", "period": {"zh": "0.64 天", "en": "0.64 d"}, "discovered": {"zh": "1999 · 旅行者 2 号旧影像", "en": "1999 · Voyager 2 archive"}, "note": {"zh": "贝琳达群", "en": "Belinda group"}, "desc": {"zh": "直到 1999 年才从旅行者 2 号拍摄的旧影像中被辨识出来。", "en": "Identified only in 1999 from archived Voyager 2 images."}, "roman": "XXV", "pron": "/ˈpɜːrdətə/", "magn": "11.0", "mass": "≈ 1.4", "incl": "1.6°", "ecc": "0.005", "dims": "", "diam_precise": "30 ± 6 km", "announced": "1999", "disc_year": "1999", "retro": false, "discoverer": {"zh": "埃里希·卡尔科施卡（旅行者 2 号旧影像）", "en": "Erich Karkoschka (Voyager 2 archive)"}, "naming": {"zh": "莎士比亚《冬天的故事》中的公主", "en": "the princess in The Winter's Tale"}, "gallery": []}, {"id": "puck", "name": {"zh": "普克", "en": "Puck"}, "group": "inner", "img": "img/puck.png", "diam": "162 km", "axis": "86,004 km", "period": {"zh": "0.76 天", "en": "0.76 d"}, "discovered": {"zh": "1985 · 旅行者 2 号", "en": "1985 · Voyager 2"}, "note": {"zh": "最大的内卫星", "en": "largest inner moon"}, "desc": {"zh": "最大的内卫星，也是旅行者 2 号拍摄到的第一颗天王星卫星。", "en": "The largest inner moon, and the first Uranian moon imaged by Voyager 2."}, "roman": "XV", "pron": "/ˈpʌk/", "magn": "7.3", "mass": "191", "incl": "0.327°", "ecc": "0.0001", "dims": "", "diam_precise": "162 ± 4 km", "announced": "1986", "disc_year": "1985", "retro": false, "discoverer": {"zh": "斯蒂芬·辛诺特（旅行者 2 号）", "en": "Stephen Synnott (Voyager 2)"}, "naming": {"zh": "莎士比亚《仲夏夜之梦》中的顽皮精灵", "en": "the mischievous sprite in A Midsummer Night's Dream"}, "gallery": []}, {"id": "mab", "name": {"zh": "玛布", "en": "Mab"}, "group": "inner", "img": "img/mab.png", "diam": "≈18 km", "axis": "97,737 km", "period": {"zh": "0.92 天", "en": "0.92 d"}, "discovered": {"zh": "2003 · 哈勃空间望远镜", "en": "2003 · Hubble"}, "note": {"zh": "μ 环来源", "en": "μ-ring source"}, "desc": {"zh": "μ 环的来源——它散落的尘埃构成了这条光环。", "en": "Source of the μ ring — its shed dust forms the ring."}, "roman": "XXVI", "pron": "/ˈmæb/", "magn": "12.1", "mass": "≈ 0.31", "incl": "1.8°", "ecc": "0.006", "dims": "", "diam_precise": "≈ 18 km", "announced": "2003", "disc_year": "2003", "retro": false, "discoverer": {"zh": "马克·肖沃尔特与杰克·利绍尔（哈勃空间望远镜）", "en": "Mark Showalter & Jack Lissauer (HST)"}, "naming": {"zh": "莎士比亚《罗密欧与朱丽叶》中的“仙后玛布”", "en": "Queen Mab in Romeo and Juliet"}, "gallery": []}, {"id": "francisco", "name": {"zh": "弗朗西斯科", "en": "Francisco"}, "group": "irregular", "img": "img/francisco.png", "diam": "≈22 km", "axis": "4,275,700 km", "period": {"zh": "267 天（逆行）", "en": "267 d (retrograde)"}, "discovered": {"zh": "2001 · 地面望远镜", "en": "2001 · ground telescope"}, "note": {"zh": "逆行", "en": "retrograde"}, "desc": {"zh": "轨道最靠近天王星的不规则卫星之一。", "en": "Among the innermost of the irregular moons."}, "roman": "XXII", "pron": "/frænˈsɪskoʊ/", "magn": "12.9", "mass": "≈ 0.56", "incl": "146.8°", "ecc": "0.144", "dims": "", "diam_precise": "≈ 22 km", "announced": "2003", "disc_year": "2001", "retro": true, "discoverer": {"zh": "马修·霍尔曼等", "en": "Matthew Holman et al."}, "naming": {"zh": "莎士比亚《暴风雨》中的贵族", "en": "a lord in The Tempest"}, "gallery": []}, {"id": "caliban", "name": {"zh": "卡利班", "en": "Caliban"}, "group": "irregular", "img": "img/caliban.jpg", "diam": "≈42 km", "axis": "7,167,000 km", "period": {"zh": "580 天（逆行）", "en": "580 d (retrograde)"}, "discovered": {"zh": "1997 · 地面望远镜", "en": "1997 · ground telescope"}, "note": {"zh": "卡利班群 · 逆行", "en": "Caliban group · retrograde"}, "desc": {"zh": "卡利班群成员，逆行轨道。", "en": "Member of the Caliban group, on a retrograde orbit."}, "roman": "XVI", "pron": "/ˈkæləbæn/", "magn": "8.9", "mass": "≈ 3.9", "incl": "141.4°", "ecc": "0.200", "dims": "", "diam_precise": "42 ± 20 km", "announced": "1997", "disc_year": "1997", "retro": true, "discoverer": {"zh": "布雷特·格拉德曼等", "en": "Brett Gladman et al."}, "naming": {"zh": "莎士比亚《暴风雨》中野性的奴仆", "en": "the brutish servant in The Tempest"}, "gallery": []}, {"id": "stephano", "name": {"zh": "斯蒂法诺", "en": "Stephano"}, "group": "irregular", "img": "img/stephano.jpg", "diam": "≈32 km", "axis": "7,951,400 km", "period": {"zh": "677 天（逆行）", "en": "677 d (retrograde)"}, "discovered": {"zh": "1999 · 地面望远镜", "en": "1999 · ground telescope"}, "note": {"zh": "卡利班群 · 逆行", "en": "Caliban group · retrograde"}, "desc": {"zh": "卡利班群成员，逆行轨道。", "en": "Member of the Caliban group, retrograde."}, "roman": "XX", "pron": "/ˈstɛfənoʊ/", "magn": "11.6", "mass": "≈ 1.7", "incl": "143.6°", "ecc": "0.235", "dims": "", "diam_precise": "≈ 32 km", "announced": "1999", "disc_year": "1999", "retro": true, "discoverer": {"zh": "布雷特·格拉德曼等", "en": "Brett Gladman et al."}, "naming": {"zh": "莎士比亚《暴风雨》中醉醺醺的管家", "en": "the drunken butler in The Tempest"}, "gallery": []}, {"id": "s2023u1", "name": {"zh": "S/2023 U1", "en": "S/2023 U1"}, "group": "irregular", "img": "", "diam": "≈8 km", "axis": "7,976,600 km", "period": {"zh": "681 天（逆行）", "en": "681 d (retrograde)"}, "discovered": {"zh": "2023 · 地面望远镜", "en": "2023 · ground telescope"}, "note": {"zh": "尚未命名 · 逆行", "en": "unnamed · retrograde"}, "desc": {"zh": "2023 年发现的卡利班群新成员，尚未正式命名。", "en": "A new Caliban-group member discovered in 2023; not yet named."}, "roman": "", "pron": "", "magn": "13.7", "mass": "≈ 0.027", "incl": "143.9°", "ecc": "0.250", "dims": "", "diam_precise": "≈ 8 km", "announced": "2024", "disc_year": "2023", "retro": true, "discoverer": {"zh": "斯科特·谢泼德等", "en": "Scott Sheppard et al."}, "naming": {"zh": "尚未正式命名", "en": "not yet formally named"}, "gallery": []}, {"id": "trinculo", "name": {"zh": "特林库洛", "en": "Trinculo"}, "group": "irregular", "img": "img/trinculo.png", "diam": "≈18 km", "axis": "8,502,600 km", "period": {"zh": "749 天（逆行）", "en": "749 d (retrograde)"}, "discovered": {"zh": "2001 · 地面望远镜", "en": "2001 · ground telescope"}, "note": {"zh": "逆行", "en": "retrograde"}, "desc": {"zh": "逆行轨道的不规则卫星。", "en": "A retrograde irregular moon."}, "roman": "XXI", "pron": "/ˈtrɪŋkjʊloʊ/", "magn": "12.7", "mass": "≈ 0.31", "incl": "167.1°", "ecc": "0.220", "dims": "", "diam_precise": "≈ 18 km", "announced": "2002", "disc_year": "2001", "retro": true, "discoverer": {"zh": "马修·霍尔曼等", "en": "Matthew Holman et al."}, "naming": {"zh": "莎士比亚《暴风雨》中的小丑", "en": "the jester in The Tempest"}, "gallery": []}, {"id": "sycorax", "name": {"zh": "西科拉克斯", "en": "Sycorax"}, "group": "irregular", "img": "img/sycorax.jpg", "diam": "≈157 km", "axis": "12,193,200 km", "period": {"zh": "1286 天（逆行）", "en": "1286 d (retrograde)"}, "discovered": {"zh": "1997 · 地面望远镜", "en": "1997 · ground telescope"}, "note": {"zh": "最大的不规则卫星", "en": "largest irregular"}, "desc": {"zh": "天王星最大的不规则卫星。", "en": "The largest irregular moon of Uranus."}, "roman": "XVII", "pron": "/ˈsɪkəræks/", "magn": "7.5", "mass": "≈ 200", "incl": "157.0°", "ecc": "0.520", "dims": "", "diam_precise": "157 ± 23 km", "announced": "1997", "disc_year": "1997", "retro": true, "discoverer": {"zh": "菲利普·尼科尔森等", "en": "Philip Nicholson et al."}, "naming": {"zh": "莎士比亚《暴风雨》中卡利班之母、女巫", "en": "Caliban's mother, a witch, in The Tempest"}, "gallery": []}, {"id": "margaret", "name": {"zh": "玛格丽特", "en": "Margaret"}, "group": "irregular", "img": "img/margaret.png", "diam": "≈20 km", "axis": "14,425,000 km", "period": {"zh": "1655 天", "en": "1655 d"}, "discovered": {"zh": "2003 · 地面望远镜", "en": "2003 · ground telescope"}, "note": {"zh": "唯一顺行", "en": "only prograde"}, "desc": {"zh": "唯一沿顺行轨道运行的不规则卫星。", "en": "The only irregular moon on a prograde orbit."}, "roman": "XXIII", "pron": "/ˈmɑːrɡərət/", "magn": "12.7", "mass": "≈ 0.42", "incl": "60.5°", "ecc": "0.642", "dims": "", "diam_precise": "≈ 20 km", "announced": "2003", "disc_year": "2003", "retro": false, "discoverer": {"zh": "斯科特·谢泼德与大卫·朱伊特", "en": "Scott Sheppard & David Jewitt"}, "naming": {"zh": "莎士比亚《无事生非》中希罗的侍女", "en": "a waiting-gentlewoman in Much Ado About Nothing"}, "gallery": []}, {"id": "prospero", "name": {"zh": "普洛斯彼罗", "en": "Prospero"}, "group": "irregular", "img": "img/prospero.jpg", "diam": "≈50 km", "axis": "16,221,000 km", "period": {"zh": "1974 天（逆行）", "en": "1974 d (retrograde)"}, "discovered": {"zh": "1999 · 地面望远镜", "en": "1999 · ground telescope"}, "note": {"zh": "逆行", "en": "retrograde"}, "desc": {"zh": "逆行轨道的不规则卫星。", "en": "A retrograde irregular moon."}, "roman": "XVIII", "pron": "/ˈprɒspəroʊ/", "magn": "10.6", "mass": "≈ 6.5", "incl": "149.4°", "ecc": "0.441", "dims": "", "diam_precise": "≈ 50 km", "announced": "1999", "disc_year": "1999", "retro": true, "discoverer": {"zh": "马修·霍尔曼等", "en": "Matthew Holman et al."}, "naming": {"zh": "莎士比亚《暴风雨》中的魔法师、前米兰公爵", "en": "the magician and former Duke of Milan in The Tempest"}, "gallery": []}, {"id": "setebos", "name": {"zh": "塞特波斯", "en": "Setebos"}, "group": "irregular", "img": "img/setebos.jpg", "diam": "≈47 km", "axis": "17,519,800 km", "period": {"zh": "2215 天（逆行）", "en": "2215 d (retrograde)"}, "discovered": {"zh": "1999 · 地面望远镜", "en": "1999 · ground telescope"}, "note": {"zh": "逆行", "en": "retrograde"}, "desc": {"zh": "逆行轨道的不规则卫星。", "en": "A retrograde irregular moon."}, "roman": "XIX", "pron": "/ˈsɛtɛbʌs/", "magn": "10.6", "mass": "≈ 5.4", "incl": "153.9°", "ecc": "0.579", "dims": "", "diam_precise": "≈ 47 km", "announced": "1999", "disc_year": "1999", "retro": true, "discoverer": {"zh": "约翰·卡维拉尔斯等", "en": "J. J. Kavelaars et al."}, "naming": {"zh": "莎士比亚《暴风雨》中西科拉克斯崇拜的神", "en": "a god worshipped by Sycorax in The Tempest"}, "gallery": []}, {"id": "ferdinand", "name": {"zh": "费迪南德", "en": "Ferdinand"}, "group": "irregular", "img": "img/ferdinand.png", "diam": "≈21 km", "axis": "20,421,400 km", "period": {"zh": "2788 天（逆行）", "en": "2788 d (retrograde)"}, "discovered": {"zh": "2001 · 地面望远镜", "en": "2001 · ground telescope"}, "note": {"zh": "最外层卫星", "en": "outermost moon"}, "desc": {"zh": "天王星已知最外层的卫星。", "en": "The outermost known moon of Uranus."}, "roman": "XXIV", "pron": "/ˈfɜːrdənænd/", "magn": "12.4", "mass": "≈ 0.48", "incl": "169.2°", "ecc": "0.395", "dims": "", "diam_precise": "≈ 21 km", "announced": "2003", "disc_year": "2001", "retro": true, "discoverer": {"zh": "马修·霍尔曼等", "en": "Matthew Holman et al."}, "naming": {"zh": "莎士比亚《暴风雨》中的那不勒斯王子", "en": "the Prince of Naples in The Tempest"}, "gallery": []}];
+const I18N = {"back": {"zh": "返回主页", "en": "Back to home"}, "of_uranus": {"zh": "天王星的卫星", "en": "Moon of Uranus"}, "overview_title": {"zh": "简介", "en": "Overview"}, "data_title": {"zh": "物理与轨道参数", "en": "Physical & orbital data"}, "gallery_k": {"zh": "影像", "en": "IMAGES"}, "gallery_title": {"zh": "影像图集", "en": "Image Gallery"}, "no_gallery": {"zh": "暂无更多影像", "en": "No additional images available"}, "prev": {"zh": "上一颗", "en": "Previous"}, "next": {"zh": "下一颗", "en": "Next"}, "all_moons": {"zh": "查看全部卫星", "en": "View all moons"}, "not_found": {"zh": "未找到该卫星", "en": "Moon not found"}, "group_major": {"zh": "主卫星", "en": "Major moon"}, "group_inner": {"zh": "内卫星", "en": "Inner moon"}, "group_irregular": {"zh": "不规则卫星", "en": "Irregular moon"}, "f_group": {"zh": "分类", "en": "Class"}, "f_roman": {"zh": "罗马编号", "en": "Roman designation"}, "f_pron": {"zh": "英语发音", "en": "Pronunciation"}, "f_diam": {"zh": "直径", "en": "Diameter"}, "f_dims": {"zh": "尺寸", "en": "Dimensions"}, "f_mass": {"zh": "质量", "en": "Mass"}, "f_magn": {"zh": "绝对星等", "en": "Abs. magnitude"}, "f_axis": {"zh": "轨道半径", "en": "Orbital radius"}, "f_period": {"zh": "轨道周期", "en": "Orbital period"}, "f_incl": {"zh": "轨道倾角", "en": "Inclination"}, "f_ecc": {"zh": "偏心率", "en": "Eccentricity"}, "f_disc": {"zh": "发现年份", "en": "Discovery year"}, "f_announced": {"zh": "公布年份", "en": "Announced"}, "f_discoverer": {"zh": "发现者", "en": "Discoverer"}, "f_naming": {"zh": "命名来源", "en": "Named after"}, "mass_unit": {"zh": "×10¹⁶ 千克", "en": "×10¹⁶ kg"}, "noimg": {"zh": "影像暂无", "en": "No image"}, "credit": {"zh": "影像来源：NASA / 旅行者 2 号、韦布空间望远镜、哈勃空间望远镜及地面天文台（公共领域）。", "en": "Images: NASA / Voyager 2, JWST, Hubble and ground-based observatories (public domain)."}, "footer_ref": {"zh": "数据参考：NASA 行星事实表、维基百科“天王星的卫星”（截至 2025 年）。", "en": "Data: NASA Planetary Fact Sheet; Wikipedia 'Moons of Uranus' (as of 2025)."}};
+const ORBIT = ["cordelia", "ophelia", "s2025u1", "bianca", "cressida", "desdemona", "juliet", "portia", "rosalind", "cupid", "belinda", "perdita", "puck", "mab", "miranda", "ariel", "umbriel", "titania", "oberon", "francisco", "caliban", "stephano", "s2023u1", "trinculo", "sycorax", "margaret", "prospero", "setebos", "ferdinand"];
+let LANG = 'zh';
+
+function t(k) { const e = I18N[k]; return e ? (e[LANG] || e.zh) : k; }
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function getMoon() {
+  const id = new URLSearchParams(location.search).get('id');
+  return MOONS.find(x => x.id === id) || MOONS[0];
+}
+
+function ordered() {
+  const rank = new Map(ORBIT.map((id, i) => [id, i]));
+  return [...MOONS].sort((a, b) => (rank.get(a.id) ?? 999) - (rank.get(b.id) ?? 999));
+}
+
+function moonFigure(m) {
+  if (m.img) return '<img src="' + m.img + '" alt="' + esc(m.name[LANG]) + '">';
+  return '<div class="noimg">' + t('noimg') + '</div>';
+}
+
+function buildData(m) {
+  const rows = [];
+  const add = (k, v) => { if (v !== undefined && v !== null && v !== '')
+    rows.push('<dt>' + t(k) + '</dt><dd>' + v + '</dd>'); };
+  add('f_group', t('group_' + m.group));
+  if (m.roman) add('f_roman', (LANG === 'zh' ? '天王星卫星 ' : 'Uranus ') + m.roman);
+  if (m.pron) add('f_pron', m.pron);
+  add('f_diam', m.diam_precise || m.diam);
+  add('f_dims', m.dims);
+  add('f_mass', m.mass + ' ' + t('mass_unit'));
+  add('f_magn', m.magn);
+  add('f_axis', m.axis);
+  add('f_period', m.period[LANG]);
+  add('f_incl', m.incl);
+  add('f_ecc', m.ecc);
+  add('f_disc', m.disc_year);
+  add('f_announced', m.announced);
+  add('f_discoverer', m.discoverer ? m.discoverer[LANG] : '');
+  add('f_naming', m.naming ? m.naming[LANG] : '');
+  return rows.join('');
+}
+
+function buildGallery(m) {
+  if (!m.gallery || !m.gallery.length) return '<p class="no-gallery">' + t('no_gallery') + '</p>';
+  return m.gallery.map(g => {
+    const cap = LANG === 'zh' ? g.zh : g.en;
+    return '<figure class="g-item"><div class="g-img"><img src="' + g.img + '" alt="' + esc(cap) + '" loading="lazy"></div>' +
+      '<figcaption>' + esc(cap) + '</figcaption></figure>';
+  }).join('');
+}
+
+function buildNav(m) {
+  const list = ordered();
+  const i = list.findIndex(x => x.id === m.id);
+  const prev = list[(i - 1 + list.length) % list.length];
+  const next = list[(i + 1) % list.length];
+  document.getElementById('prevLink').href = 'moon.html?id=' + prev.id;
+  document.getElementById('nextLink').href = 'moon.html?id=' + next.id;
+  document.getElementById('prevName').textContent = prev.name[LANG];
+  document.getElementById('nextName').textContent = next.name[LANG];
+}
+
+function render() {
+  const m = getMoon();
+  const other = LANG === 'zh' ? 'en' : 'zh';
+  document.title = m.name[LANG] + ' · ' + t('of_uranus');
+  document.getElementById('moonName').innerHTML = esc(m.name[LANG]) + ' <span class="en">' + esc(m.name[other]) + '</span>';
+  const note = document.getElementById('moonNote');
+  note.textContent = m.note[LANG];
+  note.className = 'tag ' + m.group;
+  document.getElementById('moonFigure').innerHTML = moonFigure(m);
+  document.getElementById('moonDesc').textContent = (m.long_desc ? m.long_desc[LANG] : m.desc[LANG]);
+  document.getElementById('dataTable').innerHTML = buildData(m);
+  document.getElementById('galleryGrid').innerHTML = buildGallery(m);
+  buildNav(m);
+  document.getElementById('btnZh').classList.toggle('on', LANG === 'zh');
+  document.getElementById('btnEn').classList.toggle('on', LANG === 'en');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t(el.getAttribute('data-i18n'));
+  });
+}
+
+function setLang(l) { LANG = l; render(); }
+window.addEventListener('DOMContentLoaded', () => {
+  render();
+  document.getElementById('btnZh').addEventListener('click', () => setLang('zh'));
+  document.getElementById('btnEn').addEventListener('click', () => setLang('en'));
+});
+</script>
+</body>
+</html>
