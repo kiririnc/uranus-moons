@@ -4,289 +4,345 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>天王星及其卫星 · Uranus &amp; Its Moons</title>
-<meta name="description" content="天王星及其 29 颗卫星的科普图解：五大主卫星高清影像、轨道参数与详细说明。">
+<meta name="description" content="天王星及其 29 颗卫星的科普图解：五大主卫星高清影像、轨道参数与详细说明，支持中英双语。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='%236fe3da'/><ellipse cx='50' cy='50' rx='46' ry='10' fill='none' stroke='%236fe3da' stroke-width='3'/></svg>">
 <style>
 :root {
-  --bg: #05060f;
-  --panel: rgba(255,255,255,0.045);
-  --panel-border: rgba(255,255,255,0.10);
-  --text: #e8eef5;
-  --muted: #9aa7b8;
+  --bg: #080b14;
+  --bg2: #0c1120;
+  --panel: rgba(255,255,255,0.04);
+  --panel-strong: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.10);
+  --border-soft: rgba(255,255,255,0.06);
+  --text: #e7edf6;
+  --muted: #96a3b8;
+  --faint: #5f6c80;
   --accent: #6fe3da;
   --accent2: #7aa8ff;
-  --line: rgba(255,255,255,0.16);
+  --c-inner: #57d6e0;
+  --c-major: #f0b45a;
+  --c-irregular: #b18cff;
+  --radius: 16px;
+  --maxw: 1120px;
+  --mono: "SF Mono", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0; color: var(--text);
-  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB",
-               "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
-  background: radial-gradient(1200px 800px at 80% -10%, #12203f 0%, transparent 55%),
-              radial-gradient(1000px 700px at 0% 110%, #0c2330 0%, transparent 55%),
-              var(--bg);
-  line-height: 1.65; overflow-x: hidden;
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+  background:
+    radial-gradient(1100px 700px at 85% -8%, #15233f 0%, transparent 55%),
+    radial-gradient(900px 650px at -5% 108%, #0d2733 0%, transparent 52%),
+    var(--bg);
+  line-height: 1.7; overflow-x: hidden;
 }
-.stars { position: fixed; inset: 0; z-index: -2;
-  box-shadow: 81vw 14vh 0 1px rgba(255,255,255,0.72),
-    31vw 28vh 0 1px rgba(255,255,255,0.72),
-    86vw 94vh 0 2px rgba(255,255,255,0.26),
-    54vw 4vh 0 1px rgba(255,255,255,0.27),
-    29vw 64vh 0 2px rgba(255,255,255,0.22),
-    25vw 91vh 0 3px rgba(255,255,255,0.69),
-    53vw 28vh 0 2px rgba(255,255,255,0.61),
-    0vw 97vh 0 1px rgba(255,255,255,0.69),
-    43vw 35vh 0 1px rgba(255,255,255,0.35),
-    97vw 43vh 0 1px rgba(255,255,255,0.26),
-    12vw 45vh 0 1px rgba(255,255,255,0.62),
-    5vw 93vh 0 2px rgba(255,255,255,0.58),
-    48vw 10vh 0 2px rgba(255,255,255,0.41),
-    80vw 79vh 0 1px rgba(255,255,255,0.60),
-    90vw 8vh 0 1px rgba(255,255,255,0.66),
-    98vw 37vh 0 1px rgba(255,255,255,0.80),
-    12vw 48vh 0 1px rgba(255,255,255,0.52),
-    46vw 20vh 0 1px rgba(255,255,255,0.45),
-    85vw 34vh 0 3px rgba(255,255,255,0.86),
-    82vw 9vh 0 2px rgba(255,255,255,0.64),
-    68vw 93vh 0 1px rgba(255,255,255,0.31),
-    48vw 34vh 0 3px rgba(255,255,255,0.68),
-    28vw 87vh 0 1px rgba(255,255,255,0.79),
-    99vw 7vh 0 1px rgba(255,255,255,0.78),
-    40vw 51vh 0 1px rgba(255,255,255,0.25),
-    72vw 91vh 0 1px rgba(255,255,255,0.35),
-    63vw 50vh 0 3px rgba(255,255,255,0.52),
-    33vw 17vh 0 1px rgba(255,255,255,0.72),
-    68vw 33vh 0 3px rgba(255,255,255,0.61),
-    74vw 51vh 0 1px rgba(255,255,255,0.35),
-    17vw 65vh 0 2px rgba(255,255,255,0.26),
-    6vw 14vh 0 1px rgba(255,255,255,0.64),
-    87vw 54vh 0 2px rgba(255,255,255,0.24),
-    48vw 76vh 0 2px rgba(255,255,255,0.57),
-    70vw 1vh 0 3px rgba(255,255,255,0.70),
-    87vw 68vh 0 1px rgba(255,255,255,0.74),
-    43vw 14vh 0 1px rgba(255,255,255,0.50),
-    58vw 0vh 0 3px rgba(255,255,255,0.81),
-    33vw 64vh 0 1px rgba(255,255,255,0.56),
-    13vw 80vh 0 1px rgba(255,255,255,0.79),
-    64vw 77vh 0 1px rgba(255,255,255,0.31),
-    97vw 20vh 0 2px rgba(255,255,255,0.87),
-    67vw 0vh 0 2px rgba(255,255,255,0.43),
-    2vw 14vh 0 1px rgba(255,255,255,0.82),
-    39vw 30vh 0 1px rgba(255,255,255,0.37),
-    72vw 10vh 0 1px rgba(255,255,255,0.71),
-    8vw 97vh 0 2px rgba(255,255,255,0.74),
-    16vw 84vh 0 2px rgba(255,255,255,0.86),
-    21vw 33vh 0 2px rgba(255,255,255,0.81),
-    54vw 27vh 0 2px rgba(255,255,255,0.73),
-    88vw 25vh 0 3px rgba(255,255,255,0.42),
-    85vw 83vh 0 1px rgba(255,255,255,0.51),
-    66vw 57vh 0 1px rgba(255,255,255,0.37),
-    8vw 43vh 0 1px rgba(255,255,255,0.61),
-    29vw 75vh 0 1px rgba(255,255,255,0.21),
-    90vw 80vh 0 1px rgba(255,255,255,0.36),
-    4vw 42vh 0 1px rgba(255,255,255,0.56),
-    35vw 85vh 0 2px rgba(255,255,255,0.35),
-    16vw 92vh 0 2px rgba(255,255,255,0.60),
-    31vw 100vh 0 2px rgba(255,255,255,0.77),
-    24vw 12vh 0 1px rgba(255,255,255,0.66),
-    45vw 54vh 0 2px rgba(255,255,255,0.53),
-    93vw 6vh 0 3px rgba(255,255,255,0.66),
-    82vw 12vh 0 1px rgba(255,255,255,0.48),
-    43vw 13vh 0 1px rgba(255,255,255,0.33),
-    68vw 57vh 0 1px rgba(255,255,255,0.50),
-    35vw 59vh 0 1px rgba(255,255,255,0.81),
-    9vw 56vh 0 2px rgba(255,255,255,0.27),
-    83vw 69vh 0 1px rgba(255,255,255,0.88),
-    96vw 30vh 0 1px rgba(255,255,255,0.48),
-    61vw 27vh 0 2px rgba(255,255,255,0.83),
-    21vw 48vh 0 1px rgba(255,255,255,0.89),
-    33vw 100vh 0 2px rgba(255,255,255,0.40),
-    89vw 93vh 0 2px rgba(255,255,255,0.66),
-    62vw 19vh 0 1px rgba(255,255,255,0.41),
-    7vw 74vh 0 3px rgba(255,255,255,0.58),
-    95vw 40vh 0 1px rgba(255,255,255,0.24),
-    61vw 64vh 0 2px rgba(255,255,255,0.31),
-    65vw 10vh 0 1px rgba(255,255,255,0.25),
-    8vw 86vh 0 1px rgba(255,255,255,0.48),
-    72vw 31vh 0 2px rgba(255,255,255,0.62),
-    79vw 10vh 0 2px rgba(255,255,255,0.66),
-    72vw 66vh 0 1px rgba(255,255,255,0.85),
-    26vw 85vh 0 3px rgba(255,255,255,0.42),
-    33vw 50vh 0 1px rgba(255,255,255,0.67),
-    38vw 58vh 0 1px rgba(255,255,255,0.85),
-    9vw 1vh 0 2px rgba(255,255,255,0.63),
-    72vw 12vh 0 1px rgba(255,255,255,0.58),
-    64vw 33vh 0 1px rgba(255,255,255,0.85),
-    8vw 31vh 0 1px rgba(255,255,255,0.40),
-    56vw 69vh 0 3px rgba(255,255,255,0.41),
-    83vw 67vh 0 1px rgba(255,255,255,0.67),
-    70vw 38vh 0 3px rgba(255,255,255,0.27),
-    17vw 33vh 0 1px rgba(255,255,255,0.82),
-    95vw 70vh 0 1px rgba(255,255,255,0.39),
-    77vw 26vh 0 3px rgba(255,255,255,0.44),
-    87vw 81vh 0 1px rgba(255,255,255,0.55),
-    32vw 6vh 0 1px rgba(255,255,255,0.64),
-    35vw 5vh 0 1px rgba(255,255,255,0.43),
-    16vw 81vh 0 1px rgba(255,255,255,0.31),
-    56vw 70vh 0 3px rgba(255,255,255,0.50),
-    1vw 14vh 0 1px rgba(255,255,255,0.86),
-    88vw 19vh 0 2px rgba(255,255,255,0.23),
-    47vw 74vh 0 2px rgba(255,255,255,0.30),
-    16vw 5vh 0 1px rgba(255,255,255,0.46),
-    5vw 45vh 0 1px rgba(255,255,255,0.68),
-    85vw 13vh 0 1px rgba(255,255,255,0.75),
-    52vw 79vh 0 3px rgba(255,255,255,0.31),
-    30vw 20vh 0 1px rgba(255,255,255,0.82),
-    3vw 22vh 0 3px rgba(255,255,255,0.85),
-    100vw 52vh 0 3px rgba(255,255,255,0.80),
-    31vw 34vh 0 1px rgba(255,255,255,0.75),
-    13vw 48vh 0 1px rgba(255,255,255,0.80),
-    28vw 25vh 0 2px rgba(255,255,255,0.44),
-    29vw 28vh 0 1px rgba(255,255,255,0.66),
-    51vw 42vh 0 1px rgba(255,255,255,0.81),
-    98vw 35vh 0 1px rgba(255,255,255,0.65),
-    51vw 86vh 0 2px rgba(255,255,255,0.43),
-    3vw 14vh 0 1px rgba(255,255,255,0.32),
-    33vw 4vh 0 1px rgba(255,255,255,0.62),
-    44vw 93vh 0 1px rgba(255,255,255,0.51),
-    65vw 14vh 0 2px rgba(255,255,255,0.83),
-    24vw 32vh 0 1px rgba(255,255,255,0.70),
-    0vw 66vh 0 2px rgba(255,255,255,0.68),
-    94vw 94vh 0 3px rgba(255,255,255,0.34),
-    55vw 8vh 0 3px rgba(255,255,255,0.84),
-    79vw 40vh 0 3px rgba(255,255,255,0.79),
-    92vw 38vh 0 2px rgba(255,255,255,0.42),
-    52vw 41vh 0 2px rgba(255,255,255,0.69),
-    70vw 16vh 0 1px rgba(255,255,255,0.49); border-radius: 50%; width: 2px; height: 2px; }
-a { color: var(--accent); }
+.stars { position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  box-shadow: 41vw 19vh 0 2px rgba(255,255,255,0.57),
+    9vw 68vh 0 1px rgba(255,255,255,0.39),
+    7vw 64vh 0 1px rgba(255,255,255,0.17),
+    55vw 53vh 0 1px rgba(255,255,255,0.31),
+    70vw 54vh 0 1px rgba(255,255,255,0.69),
+    15vw 28vh 0 3px rgba(255,255,255,0.56),
+    7vw 73vh 0 2px rgba(255,255,255,0.41),
+    28vw 5vh 0 2px rgba(255,255,255,0.71),
+    37vw 53vh 0 1px rgba(255,255,255,0.50),
+    73vw 39vh 0 2px rgba(255,255,255,0.68),
+    23vw 13vh 0 2px rgba(255,255,255,0.52),
+    24vw 47vh 0 1px rgba(255,255,255,0.51),
+    8vw 72vh 0 1px rgba(255,255,255,0.55),
+    63vw 87vh 0 2px rgba(255,255,255,0.43),
+    40vw 59vh 0 2px rgba(255,255,255,0.75),
+    46vw 38vh 0 1px rgba(255,255,255,0.67),
+    89vw 99vh 0 1px rgba(255,255,255,0.20),
+    38vw 67vh 0 2px rgba(255,255,255,0.72),
+    93vw 57vh 0 1px rgba(255,255,255,0.55),
+    9vw 15vh 0 2px rgba(255,255,255,0.42),
+    96vw 43vh 0 1px rgba(255,255,255,0.76),
+    53vw 5vh 0 3px rgba(255,255,255,0.20),
+    71vw 73vh 0 1px rgba(255,255,255,0.37),
+    44vw 76vh 0 2px rgba(255,255,255,0.53),
+    58vw 8vh 0 1px rgba(255,255,255,0.76),
+    60vw 89vh 0 3px rgba(255,255,255,0.19),
+    93vw 89vh 0 1px rgba(255,255,255,0.57),
+    87vw 57vh 0 1px rgba(255,255,255,0.62),
+    85vw 44vh 0 1px rgba(255,255,255,0.76),
+    45vw 21vh 0 2px rgba(255,255,255,0.23),
+    7vw 27vh 0 1px rgba(255,255,255,0.23),
+    31vw 50vh 0 2px rgba(255,255,255,0.75),
+    63vw 10vh 0 1px rgba(255,255,255,0.44),
+    70vw 35vh 0 1px rgba(255,255,255,0.68),
+    70vw 35vh 0 3px rgba(255,255,255,0.42),
+    45vw 87vh 0 2px rgba(255,255,255,0.77),
+    19vw 10vh 0 1px rgba(255,255,255,0.25),
+    84vw 29vh 0 1px rgba(255,255,255,0.47),
+    75vw 23vh 0 1px rgba(255,255,255,0.33),
+    18vw 53vh 0 2px rgba(255,255,255,0.39),
+    72vw 40vh 0 1px rgba(255,255,255,0.60),
+    65vw 79vh 0 3px rgba(255,255,255,0.59),
+    6vw 58vh 0 3px rgba(255,255,255,0.67),
+    50vw 50vh 0 2px rgba(255,255,255,0.41),
+    61vw 81vh 0 2px rgba(255,255,255,0.19),
+    8vw 26vh 0 2px rgba(255,255,255,0.26),
+    43vw 76vh 0 1px rgba(255,255,255,0.22),
+    72vw 19vh 0 2px rgba(255,255,255,0.22),
+    46vw 78vh 0 1px rgba(255,255,255,0.20),
+    26vw 78vh 0 2px rgba(255,255,255,0.25),
+    32vw 44vh 0 2px rgba(255,255,255,0.39),
+    15vw 14vh 0 2px rgba(255,255,255,0.80),
+    59vw 61vh 0 2px rgba(255,255,255,0.35),
+    18vw 13vh 0 3px rgba(255,255,255,0.37),
+    33vw 61vh 0 3px rgba(255,255,255,0.25),
+    2vw 26vh 0 2px rgba(255,255,255,0.39),
+    88vw 69vh 0 1px rgba(255,255,255,0.64),
+    38vw 82vh 0 1px rgba(255,255,255,0.60),
+    33vw 66vh 0 1px rgba(255,255,255,0.74),
+    45vw 98vh 0 1px rgba(255,255,255,0.50),
+    99vw 64vh 0 1px rgba(255,255,255,0.56),
+    78vw 100vh 0 1px rgba(255,255,255,0.67),
+    51vw 94vh 0 1px rgba(255,255,255,0.28),
+    63vw 45vh 0 3px rgba(255,255,255,0.17),
+    3vw 35vh 0 2px rgba(255,255,255,0.32),
+    88vw 77vh 0 1px rgba(255,255,255,0.44),
+    92vw 44vh 0 1px rgba(255,255,255,0.20),
+    13vw 29vh 0 2px rgba(255,255,255,0.28),
+    26vw 61vh 0 2px rgba(255,255,255,0.79),
+    78vw 0vh 0 2px rgba(255,255,255,0.74),
+    44vw 82vh 0 1px rgba(255,255,255,0.69),
+    15vw 49vh 0 3px rgba(255,255,255,0.64),
+    61vw 22vh 0 2px rgba(255,255,255,0.66),
+    42vw 11vh 0 3px rgba(255,255,255,0.41),
+    51vw 95vh 0 1px rgba(255,255,255,0.62),
+    21vw 16vh 0 1px rgba(255,255,255,0.25),
+    59vw 83vh 0 1px rgba(255,255,255,0.55),
+    76vw 60vh 0 3px rgba(255,255,255,0.76),
+    19vw 70vh 0 2px rgba(255,255,255,0.24),
+    1vw 92vh 0 3px rgba(255,255,255,0.22),
+    95vw 17vh 0 2px rgba(255,255,255,0.79),
+    24vw 27vh 0 1px rgba(255,255,255,0.31),
+    37vw 64vh 0 1px rgba(255,255,255,0.65),
+    41vw 33vh 0 2px rgba(255,255,255,0.42),
+    16vw 7vh 0 3px rgba(255,255,255,0.38),
+    58vw 84vh 0 2px rgba(255,255,255,0.68),
+    66vw 53vh 0 2px rgba(255,255,255,0.23),
+    19vw 67vh 0 2px rgba(255,255,255,0.16),
+    56vw 99vh 0 1px rgba(255,255,255,0.55),
+    99vw 19vh 0 1px rgba(255,255,255,0.24),
+    79vw 92vh 0 1px rgba(255,255,255,0.51),
+    41vw 87vh 0 2px rgba(255,255,255,0.49),
+    61vw 100vh 0 1px rgba(255,255,255,0.72),
+    7vw 31vh 0 1px rgba(255,255,255,0.33),
+    98vw 12vh 0 2px rgba(255,255,255,0.44),
+    3vw 97vh 0 1px rgba(255,255,255,0.44),
+    78vw 64vh 0 2px rgba(255,255,255,0.48),
+    88vw 35vh 0 2px rgba(255,255,255,0.48),
+    61vw 64vh 0 1px rgba(255,255,255,0.60),
+    33vw 71vh 0 1px rgba(255,255,255,0.70),
+    17vw 53vh 0 1px rgba(255,255,255,0.41),
+    40vw 9vh 0 3px rgba(255,255,255,0.31),
+    9vw 27vh 0 3px rgba(255,255,255,0.35),
+    15vw 99vh 0 1px rgba(255,255,255,0.76),
+    82vw 84vh 0 1px rgba(255,255,255,0.24),
+    17vw 59vh 0 1px rgba(255,255,255,0.64),
+    12vw 50vh 0 2px rgba(255,255,255,0.26),
+    85vw 28vh 0 1px rgba(255,255,255,0.61),
+    65vw 51vh 0 1px rgba(255,255,255,0.42),
+    45vw 40vh 0 1px rgba(255,255,255,0.62),
+    2vw 43vh 0 2px rgba(255,255,255,0.45),
+    90vw 2vh 0 2px rgba(255,255,255,0.37),
+    79vw 37vh 0 2px rgba(255,255,255,0.77),
+    14vw 100vh 0 1px rgba(255,255,255,0.78),
+    13vw 10vh 0 1px rgba(255,255,255,0.33),
+    99vw 23vh 0 1px rgba(255,255,255,0.64),
+    54vw 86vh 0 1px rgba(255,255,255,0.41),
+    68vw 65vh 0 2px rgba(255,255,255,0.47),
+    41vw 11vh 0 1px rgba(255,255,255,0.19),
+    88vw 23vh 0 2px rgba(255,255,255,0.73),
+    34vw 2vh 0 3px rgba(255,255,255,0.21),
+    33vw 10vh 0 2px rgba(255,255,255,0.71),
+    8vw 33vh 0 1px rgba(255,255,255,0.44),
+    43vw 70vh 0 2px rgba(255,255,255,0.75),
+    34vw 79vh 0 1px rgba(255,255,255,0.18),
+    90vw 30vh 0 1px rgba(255,255,255,0.78),
+    33vw 6vh 0 1px rgba(255,255,255,0.28),
+    39vw 80vh 0 1px rgba(255,255,255,0.50),
+    26vw 37vh 0 2px rgba(255,255,255,0.48),
+    22vw 34vh 0 1px rgba(255,255,255,0.67),
+    32vw 4vh 0 1px rgba(255,255,255,0.16),
+    64vw 70vh 0 1px rgba(255,255,255,0.48),
+    31vw 57vh 0 1px rgba(255,255,255,0.58),
+    83vw 55vh 0 3px rgba(255,255,255,0.47),
+    50vw 64vh 0 1px rgba(255,255,255,0.60),
+    29vw 43vh 0 1px rgba(255,255,255,0.69),
+    90vw 93vh 0 3px rgba(255,255,255,0.24),
+    44vw 6vh 0 1px rgba(255,255,255,0.16),
+    80vw 94vh 0 1px rgba(255,255,255,0.43),
+    7vw 10vh 0 3px rgba(255,255,255,0.70); width: 2px; height: 2px; border-radius: 50%; }
+a { color: var(--accent); text-decoration: none; }
 
-/* 导航 */
+/* ---- 导航 ---- */
 nav {
-  position: sticky; top: 0; z-index: 20;
-  display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
-  padding: 14px 28px; backdrop-filter: blur(10px);
-  background: rgba(6,8,16,0.7); border-bottom: 1px solid var(--panel-border);
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 12px 26px; backdrop-filter: blur(14px) saturate(140%);
+  background: rgba(8,11,20,0.72); border-bottom: 1px solid var(--border-soft);
 }
-nav .brand { font-weight: 700; font-size: 17px; letter-spacing: 1px; }
-nav .brand span { color: var(--accent); }
-nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
-nav a:hover { color: var(--text); }
+nav .brand { font-weight: 800; font-size: 16px; letter-spacing: .5px; margin-right: 10px; }
+nav .brand .orb { color: var(--accent); }
+nav .links { display: flex; gap: 2px; flex-wrap: wrap; }
+nav .links a {
+  color: var(--muted); font-size: 13.5px; padding: 6px 12px; border-radius: 8px; transition: .2s;
+}
+nav .links a:hover { color: var(--text); background: var(--panel); }
+nav .spacer { flex: 1; }
+.lang-toggle {
+  display: inline-flex; align-items: center; gap: 2px;
+  border: 1px solid var(--border); border-radius: 999px; overflow: hidden;
+  background: var(--panel); font-size: 13px; font-weight: 600;
+}
+.lang-toggle button {
+  border: 0; background: transparent; color: var(--muted);
+  padding: 6px 14px; cursor: pointer; font-size: 13px; font-family: inherit; transition: .2s;
+}
+.lang-toggle button.on { background: var(--accent); color: #04201e; }
 
-/* Hero */
-.hero {
-  position: relative; min-height: 74vh; display: flex; align-items: flex-end;
-  padding: 60px 32px 40px; isolation: isolate;
-}
-.hero::before {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: url(img/uranus_hero.jpg) center 30% / cover no-repeat;
-}
-.hero::after {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(5,6,15,0.35) 0%, rgba(5,6,15,0.55) 60%, var(--bg) 100%);
-}
-.hero-inner { max-width: 1080px; margin: 0 auto; width: 100%; }
-.hero h1 { font-size: clamp(34px, 6vw, 64px); margin: 0 0 8px; letter-spacing: 2px; }
-.hero h1 span { color: var(--accent); }
-.hero .sub { font-size: clamp(16px, 2.4vw, 21px); color: var(--muted); margin: 0 0 18px; max-width: 640px; }
-.hero .credit { font-size: 12px; color: rgba(255,255,255,0.55); }
-.badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-.badge {
-  padding: 6px 14px; border: 1px solid var(--panel-border); border-radius: 999px;
-  background: rgba(255,255,255,0.06); font-size: 13px; color: var(--text);
-}
+/* ---- Hero ---- */
+.hero { position: relative; min-height: 72vh; display: flex; align-items: flex-end;
+  padding: 70px 32px 46px; isolation: isolate; }
+.hero::before { content:""; position:absolute; inset:0; z-index:-1;
+  background: url(img/uranus_hero.jpg) center 28% / cover no-repeat; }
+.hero::after { content:""; position:absolute; inset:0; z-index:-1;
+  background: linear-gradient(180deg, rgba(8,11,20,.30) 0%, rgba(8,11,20,.60) 55%, var(--bg) 100%); }
+.hero-inner { max-width: var(--maxw); margin: 0 auto; width: 100%; }
+.badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+.badge { padding: 7px 15px; border: 1px solid var(--border); border-radius: 999px;
+  background: rgba(255,255,255,0.05); backdrop-filter: blur(6px); font-size: 13px; color: var(--text); }
 .badge b { color: var(--accent); }
+.hero h1 { font-size: clamp(36px, 6.4vw, 70px); margin: 0 0 10px; letter-spacing: 1px; line-height: 1.05; font-weight: 800; }
+.hero h1 .orb { color: var(--accent); }
+.hero .sub { font-size: clamp(15px, 2.2vw, 19px); color: #c2cbdb; margin: 0 0 16px; max-width: 660px; }
+.hero .credit { font-size: 12px; color: rgba(255,255,255,0.5); }
 
-/* 通用节 */
-section { padding: 48px 28px; }
-.wrap { max-width: 1080px; margin: 0 auto; }
-h2 { font-size: 28px; letter-spacing: 1px; margin: 0 0 6px; }
-h2 .en { color: var(--muted); font-weight: 400; font-size: 16px; letter-spacing: 3px; }
-.lead { color: var(--muted); margin: 0 0 30px; }
+/* ---- 通用节 ---- */
+section { padding: 62px 28px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; }
+.sec-head { margin-bottom: 30px; }
+.sec-head .kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+.sec-head h2 { font-size: clamp(24px, 3.4vw, 34px); margin: 0 0 8px; letter-spacing: .5px; }
+.sec-head h2 .en { color: var(--muted); font-weight: 400; font-size: .55em; letter-spacing: 2px; margin-left: 8px; }
+.sec-head .lead { color: var(--muted); margin: 0; max-width: 760px; }
 
-/* 概览 */
-.overview-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px; align-items: center; }
-.overview-grid img {
-  width: 100%; border-radius: 18px; border: 1px solid var(--panel-border);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; }
-.fact { border-bottom: 1px solid var(--panel-border); padding: 8px 0; }
-.fact dt { font-size: 12px; color: var(--muted); }
-.fact dd { margin: 2px 0 0; font-size: 15px; }
+/* ---- 概览 ---- */
+.overview-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 30px; align-items: stretch; }
+.overview-grid .frame { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+  background: var(--panel); box-shadow: 0 24px 70px rgba(0,0,0,.5); }
+.overview-grid .frame img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 320px; }
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; background: var(--panel); }
+.fact { padding: 14px 18px; border-bottom: 1px solid var(--border-soft); border-right: 1px solid var(--border-soft); }
+.fact:nth-child(2n) { border-right: 0; }
+.fact dt { font-size: 11.5px; color: var(--faint); letter-spacing: .5px; text-transform: uppercase; }
+.fact dd { margin: 3px 0 0; font-size: 15px; font-weight: 600; }
 
-/* 家族图谱 */
-.portrait {
-  background: var(--panel); border: 1px solid var(--panel-border);
-  border-radius: 22px; padding: 10px;
-}
+/* ---- 家族图谱 ---- */
+.portrait { background: var(--panel); border: 1px solid var(--border); border-radius: 20px; padding: 12px; }
 .family-svg { width: 100%; height: auto; display: block; }
-.orbit { fill: none; stroke: var(--line); stroke-dasharray: 3 7; }
-.link { stroke: rgba(255,255,255,0.22); stroke-width: 1; }
+.orbit { fill: none; stroke: rgba(255,255,255,0.12); stroke-dasharray: 3 8; }
+.link { stroke: rgba(255,255,255,0.2); stroke-width: 1; }
 .uranus-ring { fill: none; stroke: var(--accent); stroke-width: 2; }
 .uranus-name { fill: var(--text); font-size: 19px; font-weight: 700; }
 .moon-halo { fill: transparent; }
-.moon-ring { fill: none; stroke: rgba(255,255,255,0.7); stroke-width: 1.5; }
-.moon { cursor: pointer; transition: transform .25s ease; }
+.moon-ring { fill: none; stroke: rgba(255,255,255,0.65); stroke-width: 1.5; }
+.moon { cursor: pointer; transition: transform .22s ease; }
 .moon:hover { transform: scale(1.12); transform-origin: center; transform-box: fill-box; }
 .moon:hover .moon-ring { stroke: var(--accent); stroke-width: 2.5; }
 .mlabel-name { fill: var(--text); font-size: 16px; font-weight: 700; }
 .mlabel-sub { fill: var(--muted); font-size: 12px; }
-.portrait-note { text-align: center; color: var(--muted); font-size: 13px; margin-top: 12px; }
+.portrait-note { text-align: center; color: var(--faint); font-size: 12.5px; margin-top: 12px; }
 
-/* 详情面板 */
+/* ---- 详情面板 ---- */
 .detail-panel {
-  margin-top: 22px; display: grid; grid-template-columns: 240px 1fr; gap: 22px;
-  background: var(--panel); border: 1px solid var(--panel-border);
-  border-radius: 18px; padding: 20px; align-items: start;
+  margin-top: 24px; display: grid; grid-template-columns: 250px 1fr; gap: 24px;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 18px; padding: 22px;
 }
-.detail-panel img { width: 100%; border-radius: 14px; }
-.detail-panel h3 { margin: 0 0 4px; font-size: 24px; }
-.detail-panel .en { color: var(--muted); }
-.detail-panel .stats {
-  display: flex; flex-wrap: wrap; gap: 8px 26px; list-style: none;
-  padding: 0; margin: 14px 0;
-}
-.detail-panel .stats li { font-size: 14px; }
-.detail-panel .stats span { color: var(--muted); margin-right: 6px; }
-.detail-panel .stats b { color: var(--accent); }
+.detail-panel .dp-img { width: 100%; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden;
+  background: #05070d; border: 1px solid var(--border-soft); display: grid; place-items: center; }
+.detail-panel .dp-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.detail-panel .dp-img .noimg { color: var(--faint); font-size: 13px; text-align: center; padding: 12px; }
+.detail-panel h3 { margin: 0 0 2px; font-size: 26px; }
+.detail-panel h3 .en { color: var(--muted); font-weight: 400; }
+.detail-panel .dp-note { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .5px;
+  padding: 3px 10px; border-radius: 999px; margin: 6px 0 14px; }
+.detail-panel .dp-note.major { background: rgba(240,180,90,.14); color: var(--c-major); }
+.detail-panel .dp-note.inner { background: rgba(87,214,224,.14); color: var(--c-inner); }
+.detail-panel .dp-note.irregular { background: rgba(177,140,255,.14); color: var(--c-irregular); }
+.detail-panel .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 26px;
+  list-style: none; padding: 0; margin: 0 0 16px; }
+.detail-panel .stats li { display: flex; flex-direction: column; gap: 1px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-soft); }
+.detail-panel .stats span { font-size: 11.5px; color: var(--faint); text-transform: uppercase; letter-spacing: .5px; }
+.detail-panel .stats b { font-size: 15px; font-weight: 600; }
+.detail-panel .desc { color: #b9c3d4; margin: 0; font-size: 15px; }
 
-/* 卫星卡片 */
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-.moon-card {
-  background: var(--panel); border: 1px solid var(--panel-border);
-  border-radius: 18px; overflow: hidden; transition: transform .25s ease, border-color .25s;
-}
-.moon-card:hover { transform: translateY(-4px); border-color: var(--accent2); }
-.card-img img { width: 100%; height: 200px; object-fit: cover; display: block; }
+/* ---- 卫星卡片（主卫星） ---- */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 22px; }
+.moon-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+.moon-card:hover { transform: translateY(-5px); border-color: var(--accent2);
+  box-shadow: 0 18px 50px rgba(0,0,0,.4); }
+.card-img { position: relative; height: 210px; overflow: hidden; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card-body { padding: 18px 20px 20px; }
 .moon-card h3 { margin: 0; font-size: 21px; }
-.moon-card .en { color: var(--muted); font-weight: 400; font-size: 15px; }
-.moon-card .order { color: var(--accent); font-size: 13px; margin: 4px 0 12px; }
-.stats { list-style: none; padding: 0; margin: 0 0 12px; }
-.stats li { display: flex; justify-content: space-between; gap: 12px;
-  padding: 6px 0; border-bottom: 1px solid var(--panel-border); font-size: 14px; }
-.stats span { color: var(--muted); }
-.stats b { color: var(--text); font-weight: 600; text-align: right; }
-.desc { color: var(--muted); font-size: 14px; margin: 0; }
+.moon-card h3 .en { color: var(--muted); font-weight: 400; font-size: 15px; }
+.tag { display: inline-block; font-size: 11.5px; font-weight: 600; letter-spacing: .4px;
+  padding: 3px 9px; border-radius: 999px; margin: 8px 0 12px; }
+.tag.major { background: rgba(240,180,90,.14); color: var(--c-major); }
+.tag.inner { background: rgba(87,214,224,.14); color: var(--c-inner); }
+.tag.irregular { background: rgba(177,140,255,.14); color: var(--c-irregular); }
+.stats { list-style: none; padding: 0; margin: 0 0 14px; }
+.stats li { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0;
+  border-bottom: 1px solid var(--border-soft); font-size: 14px; }
+.stats span { color: var(--faint); }
+.stats b { color: var(--text); font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.desc { color: #9aa7ba; font-size: 13.8px; margin: 0; }
 
-/* 内/不规则卫星列表 */
-.lists { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-.list-box { background: var(--panel); border: 1px solid var(--panel-border); border-radius: 18px; padding: 22px; }
-.list-box h3 { margin: 0 0 6px; }
-.list-box .hint { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
-.list-box ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; }
-.list-box li { display: flex; flex-direction: column; padding: 6px 10px; border-radius: 8px; background: rgba(255,255,255,0.03); }
-.list-box .zh { font-size: 14px; }
-.list-box .en { font-size: 12px; color: var(--muted); }
+/* ---- 内/不规则卫星网格（可点击） ---- */
+.small-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); gap: 14px; }
+.small-cell { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 7px;
+  padding: 16px 10px 14px; background: var(--panel); border: 1px solid var(--border-soft);
+  border-radius: 14px; cursor: pointer; transition: .2s; }
+.small-cell:hover { transform: translateY(-4px); border-color: var(--accent2); background: var(--panel-strong); }
+.small-cell .thumb { width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
+  background: #05070d; border: 2px solid var(--border); display: grid; place-items: center; }
+.small-cell .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.small-cell .thumb .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--faint); }
+.small-cell .thumb.inner { border-color: var(--c-inner); }
+.small-cell .thumb.irregular { border-color: var(--c-irregular); }
+.small-cell .nm { font-weight: 700; font-size: 14px; line-height: 1.25; }
+.small-cell .nm .en { display: block; color: var(--muted); font-weight: 400; font-size: 11.5px; }
+.small-cell .dia { font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; }
 
-footer { border-top: 1px solid var(--panel-border); padding: 32px 28px 44px; color: var(--muted); font-size: 13px; text-align: center; }
+/* ---- 图例 ---- */
+.legend { display: flex; gap: 22px; flex-wrap: wrap; margin-bottom: 26px; font-size: 13px; color: var(--muted); }
+.legend .item { display: inline-flex; align-items: center; gap: 8px; }
+.legend .sw { width: 12px; height: 12px; border-radius: 4px; }
+.legend .sw.major { background: var(--c-major); }
+.legend .sw.inner { background: var(--c-inner); }
+.legend .sw.irregular { background: var(--c-irregular); }
+
+footer { border-top: 1px solid var(--border-soft); padding: 36px 28px 48px; color: var(--muted);
+  font-size: 12.5px; text-align: center; }
+footer p { margin: 4px 0; }
 footer a { color: var(--muted); }
 
-@media (max-width: 760px) {
-  .overview-grid, .detail-panel, .lists { grid-template-columns: 1fr; }
+@media (max-width: 780px) {
+  .overview-grid, .detail-panel { grid-template-columns: 1fr; }
   .facts { grid-template-columns: 1fr; }
+  .fact:nth-child(2n) { border-right: 1px solid var(--border-soft); }
+  .detail-panel .stats { grid-template-columns: 1fr 1fr; }
+  nav .links { order: 3; width: 100%; }
 }
 </style>
 </head>
@@ -294,250 +350,289 @@ footer a { color: var(--muted); }
 <div class="stars"></div>
 
 <nav>
-  <div class="brand">天王星<span>及其卫星</span></div>
-  <a href="#overview">概览</a>
-  <a href="#portrait">主卫星图谱</a>
-  <a href="#moons">主卫星详解</a>
-  <a href="#others">其他卫星</a>
-  <a href="#sources">来源</a>
+  <div class="brand"><span class="orb">&#9797;</span> <span data-i18n="brand1">天王星</span><span data-i18n="brand2">及其卫星</span></div>
+  <div class="links">
+    <a href="#overview" data-i18n="nav_overview">概览</a>
+    <a href="#portrait" data-i18n="nav_portrait">主卫星图谱</a>
+    <a href="#major" data-i18n="nav_major">主卫星详解</a>
+    <a href="#inner" data-i18n="nav_inner">内卫星</a>
+    <a href="#irregular" data-i18n="nav_irregular">不规则卫星</a>
+  </div>
+  <div class="spacer"></div>
+  <div class="lang-toggle">
+    <button id="btnZh" class="on">中文</button>
+    <button id="btnEn">EN</button>
+  </div>
 </nav>
 
 <header class="hero">
   <div class="hero-inner">
     <div class="badges">
-      <span class="badge">太阳系第 7 颗行星</span>
-      <span class="badge">冰巨星</span>
-      <span class="badge"><b>29</b> 颗已知卫星</span>
-      <span class="badge">自转轴倾角约 <b>97.8°</b></span>
+      <span class="badge" data-i18n="badge1">太阳系第 7 颗行星</span>
+      <span class="badge" data-i18n="badge2">冰巨星</span>
+      <span class="badge"><b>29</b> <span data-i18n="badge3">颗已知卫星</span></span>
+      <span class="badge"><span data-i18n="badge4">自转轴倾角约</span> <b>97.8°</b></span>
     </div>
-    <h1>天王星及其<span>卫星</span></h1>
-    <p class="sub">一颗“躺着”绕太阳公转的冰巨星，及其 5 颗主卫星、13 颗内卫星与 9 颗不规则卫星。</p>
-    <p class="credit">背景影像：詹姆斯·韦布空间望远镜 NIRCam 广角图，展示天王星、其光环与多颗卫星（NASA / ESA / CSA / STScI）</p>
+    <h1><span data-i18n="hero_title1">天王星及其</span><span class="orb" data-i18n="hero_title2">卫星</span></h1>
+    <p class="sub" data-i18n="hero_sub">一颗“躺着”绕太阳公转的冰巨星，以及它的 5 颗主卫星、14 颗内卫星与 10 颗不规则卫星。</p>
+    <p class="credit" data-i18n="hero_credit">背景影像：詹姆斯·韦布空间望远镜 NIRCam 广角图（NASA / ESA / CSA / STScI）</p>
   </div>
 </header>
 
 <section id="overview">
   <div class="wrap">
-    <h2>天王星概览 <span class="en">Uranus Overview</span></h2>
-    <p class="lead">太阳系的第七颗行星，一颗蓝绿色的冰巨星——甲烷大气吸收红光，使它呈现出独特的青绿色。</p>
+    <div class="sec-head">
+      <div class="kicker" data-i18n="sec_overview_k">概览</div>
+      <h2><span data-i18n="sec_overview_t">天王星概览</span><span class="en">Uranus Overview</span></h2>
+      <p class="lead" data-i18n="sec_overview_l">太阳系的第七颗行星，一颗蓝绿色的冰巨星。</p>
+    </div>
     <div class="overview-grid">
-      <img src="img/uranus_voyager.jpg" alt="旅行者 2 号拍摄的天王星">
-      <dl class="facts">
-        <div class="fact"><dt>类型</dt><dd>冰巨星（Ice Giant）</dd></div><div class="fact"><dt>太阳系位置</dt><dd>第 7 颗行星</dd></div><div class="fact"><dt>发现</dt><dd>1781 年 · 威廉·赫歇尔</dd></div><div class="fact"><dt>直径</dt><dd>约 50,724 km（地球的 ~4 倍）</dd></div><div class="fact"><dt>自转轴倾角</dt><dd>约 97.8°（“躺着”绕太阳公转）</dd></div><div class="fact"><dt>公转 / 自转周期</dt><dd>约 84 年 / 约 17.2 小时（逆行自转）</dd></div><div class="fact"><dt>光环</dt><dd>13 条已知光环（暗淡、狭窄）</dd></div><div class="fact"><dt>卫星数量</dt><dd>29 颗（截至 2025 年）</dd></div><div class="fact"><dt>大气</dt><dd>氢、氦、甲烷（吸收红光 → 蓝绿色）</dd></div><div class="fact"><dt>表面温度</dt><dd>约 -224 °C（太阳系最冷的行星）</dd></div>
-      </dl>
+      <div class="frame"><img src="img/uranus_voyager.jpg" alt="旅行者 2 号拍摄的天王星"></div>
+      <dl class="facts" id="factsBox"></dl>
     </div>
   </div>
 </section>
 
 <section id="portrait">
   <div class="wrap">
-    <h2>五大主卫星家族图谱 <span class="en">The Five Major Moons</span></h2>
-    <p class="lead">点击任意一颗卫星，查看它的基本信息。图中卫星按轨道从内到外排列，大小与距离未按真实比例。</p>
+    <div class="sec-head">
+      <div class="kicker" data-i18n="sec_portrait_k">主卫星</div>
+      <h2><span data-i18n="sec_portrait_t">五大主卫星家族图谱</span><span class="en">The Five Major Moons</span></h2>
+      <p class="lead" data-i18n="sec_portrait_l">点击任意一颗卫星查看详情。</p>
+    </div>
     <div class="portrait">
-      <svg viewBox="0 0 960 760" xmlns="http://www.w3.org/2000/svg" role="img"
-     aria-labelledby="familyTitle" class="family-svg">
-  <title id="familyTitle">天王星五大主卫星家族图谱</title>
+      <svg viewBox="0 0 960 760" xmlns="http://www.w3.org/2000/svg" role="img" class="family-svg">
   <defs>
     <radialGradient id="urGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#8fe7e0" stop-opacity="0.55"/>
-      <stop offset="55%" stop-color="#4fb6c9" stop-opacity="0.18"/>
+      <stop offset="0%" stop-color="#8fe7e0" stop-opacity="0.5"/>
+      <stop offset="55%" stop-color="#4fb6c9" stop-opacity="0.16"/>
       <stop offset="100%" stop-color="#4fb6c9" stop-opacity="0"/>
     </radialGradient>
   </defs>
 <circle cx="480" cy="395" r="135" class="orbit"/><circle cx="480" cy="395" r="205" class="orbit"/><circle cx="480" cy="395" r="265" class="orbit"/><circle cx="480" cy="395" r="320" class="orbit"/><circle cx="480" cy="395" r="350" class="orbit"/>
   <circle cx="480" cy="395" r="140" fill="url(#urGlow)"/>
   <clipPath id="clip_uranus"><circle cx="480" cy="395" r="72"/></clipPath>
-  <image href="img/uranus_voyager.jpg" x="408" y="323" width="144" height="144"
-         clip-path="url(#clip_uranus)" preserveAspectRatio="xMidYMid slice"/>
+  <image href="img/uranus_voyager.jpg" x="408" y="323" width="144" height="144" clip-path="url(#clip_uranus)" preserveAspectRatio="xMidYMid slice"/>
   <circle cx="480" cy="395" r="72" class="uranus-ring"/>
-  <text x="480" y="495" class="uranus-name" text-anchor="middle">天王星 Uranus</text>
+  <text x="480" y="495" class="uranus-name" data-i18n="portrait_center" text-anchor="middle">天王星 Uranus</text>
   <line x1="414.7" y1="364.6" x2="357.6" y2="337.9" class="link"/>
-  <g class="moon" data-moon="米兰达" onclick="showMoon('米兰达')" role="button" tabindex="0" aria-label="米兰达">
+  <g class="moon" data-moon-id="miranda" onclick="showMoon('miranda')" role="button" tabindex="0" aria-label="米兰达">
     <circle cx="357.6" cy="337.9" r="29.0" class="moon-halo"/>
-    <clipPath id="clip_moon_米兰达"><circle cx="357.6" cy="337.9" r="24"/></clipPath>
-    <image href="img/miranda.jpg" x="333.6" y="313.9" width="48" height="48" clip-path="url(#clip_moon_米兰达)" preserveAspectRatio="xMidYMid slice"/>
+    <clipPath id="clip_miranda"><circle cx="357.6" cy="337.9" r="24"/></clipPath>
+    <image href="img/miranda.jpg" x="333.6" y="313.9" width="48" height="48" clip-path="url(#clip_miranda)" preserveAspectRatio="xMidYMid slice"/>
     <circle cx="357.6" cy="337.9" r="24" class="moon-ring"/>
   </g>
-  <text x="299.6" y="304.9" class="mlabel-name" text-anchor="end">米兰达</text>
-  <text x="299.6" y="324.9" class="mlabel-sub" text-anchor="end">471.6 km</text>
+  <text x="297.8" y="304.1" class="mlabel-name" data-moon-label="miranda" text-anchor="end">米兰达</text>
+  <text x="297.8" y="324.1" class="mlabel-sub" text-anchor="end">471.6 km</text>
   <line x1="421.0" y1="436.3" x2="312.1" y2="512.6" class="link"/>
-  <g class="moon" data-moon="阿里尔" onclick="showMoon('阿里尔')" role="button" tabindex="0" aria-label="阿里尔">
+  <g class="moon" data-moon-id="ariel" onclick="showMoon('ariel')" role="button" tabindex="0" aria-label="阿里尔">
     <circle cx="312.1" cy="512.6" r="39.0" class="moon-halo"/>
-    <clipPath id="clip_moon_阿里尔"><circle cx="312.1" cy="512.6" r="34"/></clipPath>
-    <image href="img/ariel.jpg" x="278.1" y="478.6" width="68" height="68" clip-path="url(#clip_moon_阿里尔)" preserveAspectRatio="xMidYMid slice"/>
+    <clipPath id="clip_ariel"><circle cx="312.1" cy="512.6" r="34"/></clipPath>
+    <image href="img/ariel.jpg" x="278.1" y="478.6" width="68" height="68" clip-path="url(#clip_ariel)" preserveAspectRatio="xMidYMid slice"/>
     <circle cx="312.1" cy="512.6" r="34" class="moon-ring"/>
   </g>
-  <text x="251.5" y="549.0" class="mlabel-name" text-anchor="end">阿里尔</text>
-  <text x="251.5" y="569.0" class="mlabel-sub" text-anchor="end">1,157.8 km</text>
+  <text x="249.8" y="550.2" class="mlabel-name" data-moon-label="ariel" text-anchor="end">阿里尔</text>
+  <text x="249.8" y="570.2" class="mlabel-sub" text-anchor="end">1,157.8 km</text>
   <line x1="535.2" y1="441.3" x2="683.0" y2="565.3" class="link"/>
-  <g class="moon" data-moon="乌姆柏里厄尔" onclick="showMoon('乌姆柏里厄尔')" role="button" tabindex="0" aria-label="乌姆柏里厄尔">
+  <g class="moon" data-moon-id="umbriel" onclick="showMoon('umbriel')" role="button" tabindex="0" aria-label="乌姆柏里厄尔">
     <circle cx="683.0" cy="565.3" r="39.0" class="moon-halo"/>
-    <clipPath id="clip_moon_乌姆柏里厄尔"><circle cx="683.0" cy="565.3" r="34"/></clipPath>
-    <image href="img/umbriel.jpg" x="649.0" y="531.3" width="68" height="68" clip-path="url(#clip_moon_乌姆柏里厄尔)" preserveAspectRatio="xMidYMid slice"/>
+    <clipPath id="clip_umbriel"><circle cx="683.0" cy="565.3" r="34"/></clipPath>
+    <image href="img/umbriel.jpg" x="649.0" y="531.3" width="68" height="68" clip-path="url(#clip_umbriel)" preserveAspectRatio="xMidYMid slice"/>
     <circle cx="683.0" cy="565.3" r="34" class="moon-ring"/>
   </g>
-  <text x="739.7" y="606.9" class="mlabel-name" text-anchor="start">乌姆柏里厄尔</text>
-  <text x="739.7" y="626.9" class="mlabel-sub" text-anchor="start">1,169.4 km</text>
+  <text x="741.2" y="608.2" class="mlabel-name" data-moon-label="umbriel" text-anchor="start">乌姆柏里厄尔</text>
+  <text x="741.2" y="628.2" class="mlabel-sub" text-anchor="start">1,169.4 km</text>
   <line x1="526.3" y1="339.8" x2="685.7" y2="149.9" class="link"/>
-  <g class="moon" data-moon="泰坦尼亚" onclick="showMoon('泰坦尼亚')" role="button" tabindex="0" aria-label="泰坦尼亚">
+  <g class="moon" data-moon-id="titania" onclick="showMoon('titania')" role="button" tabindex="0" aria-label="泰坦尼亚">
     <circle cx="685.7" cy="149.9" r="43.0" class="moon-halo"/>
-    <clipPath id="clip_moon_泰坦尼亚"><circle cx="685.7" cy="149.9" r="38"/></clipPath>
-    <image href="img/titania.jpg" x="647.7" y="111.9" width="76" height="76" clip-path="url(#clip_moon_泰坦尼亚)" preserveAspectRatio="xMidYMid slice"/>
+    <clipPath id="clip_titania"><circle cx="685.7" cy="149.9" r="38"/></clipPath>
+    <image href="img/titania.jpg" x="647.7" y="111.9" width="76" height="76" clip-path="url(#clip_titania)" preserveAspectRatio="xMidYMid slice"/>
     <circle cx="685.7" cy="149.9" r="38" class="moon-ring"/>
   </g>
-  <text x="735.8" y="84.1" class="mlabel-name" text-anchor="start">泰坦尼亚</text>
-  <text x="735.8" y="104.1" class="mlabel-sub" text-anchor="start">1,576.8 km</text>
+  <text x="737.1" y="82.6" class="mlabel-name" data-moon-label="titania" text-anchor="start">泰坦尼亚</text>
+  <text x="737.1" y="102.6" class="mlabel-sub" text-anchor="start">1,576.8 km</text>
   <line x1="495.0" y1="465.4" x2="552.8" y2="737.4" class="link"/>
-  <g class="moon" data-moon="欧贝隆" onclick="showMoon('欧贝隆')" role="button" tabindex="0" aria-label="欧贝隆">
+  <g class="moon" data-moon-id="oberon" onclick="showMoon('oberon')" role="button" tabindex="0" aria-label="欧贝隆">
     <circle cx="552.8" cy="737.4" r="41.0" class="moon-halo"/>
-    <clipPath id="clip_moon_欧贝隆"><circle cx="552.8" cy="737.4" r="36"/></clipPath>
-    <image href="img/oberon.jpg" x="516.8" y="701.4" width="72" height="72" clip-path="url(#clip_moon_欧贝隆)" preserveAspectRatio="xMidYMid slice"/>
+    <clipPath id="clip_oberon"><circle cx="552.8" cy="737.4" r="36"/></clipPath>
+    <image href="img/oberon.jpg" x="516.8" y="701.4" width="72" height="72" clip-path="url(#clip_oberon)" preserveAspectRatio="xMidYMid slice"/>
     <circle cx="552.8" cy="737.4" r="36" class="moon-ring"/>
   </g>
-  <text x="568.6" y="805.7" class="mlabel-name" text-anchor="start">欧贝隆</text>
-  <text x="568.6" y="825.7" class="mlabel-sub" text-anchor="start">1,522.8 km</text>
+  <text x="569.0" y="807.6" class="mlabel-name" data-moon-label="oberon" text-anchor="start">欧贝隆</text>
+  <text x="569.0" y="827.6" class="mlabel-sub" text-anchor="start">1,522.8 km</text>
 
 </svg>
-      <p class="portrait-note">▲ 中心为天王星，四周依次为米兰达、阿里尔、乌姆柏里厄尔、泰坦尼亚、欧贝隆（影像均为旅行者 2 号于 1986 年拍摄）。</p>
+      <p class="portrait-note" data-i18n="portrait_note">中心为天王星，四周依次为米兰达、阿里尔、乌姆柏里厄尔、泰坦尼亚、欧贝隆。</p>
     </div>
-    <div class="detail-panel" id="detailPanel">
-      <img id="detailImg" src="img/miranda.jpg" alt="">
+    <div class="detail-panel" id="dpPanel">
+      <div class="dp-img" id="dpImg"></div>
       <div>
-        <h3 id="detailName">米兰达 <span class="en">Miranda</span></h3>
-        <p id="detailOrder" style="color:var(--accent);margin:2px 0 0;"></p>
-        <ul class="stats" id="detailStats"></ul>
-        <p class="desc" id="detailDesc"></p>
+        <h3 id="dpName"></h3>
+        <span class="dp-note major" id="dpNote"></span>
+        <ul class="stats" id="dpStats"></ul>
+        <p class="desc" id="dpDesc"></p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="moons">
+<section id="major">
   <div class="wrap">
-    <h2>五颗主卫星详解 <span class="en">Detailed Look</span></h2>
-    <p class="lead">天王星的五颗主卫星，均以莎士比亚与蒲柏作品中的人物命名。</p>
-    <div class="cards-grid">
-      
-      <article class="moon-card" id="card_米兰达">
-        <div class="card-img"><img src="img/miranda.jpg" alt="米兰达（Miranda）的影像" loading="lazy"></div>
-        <div class="card-body">
-          <h3>米兰达 <span class="en">Miranda</span></h3>
-          <p class="order">天卫五（最内侧主卫星）</p>
-          <ul class="stats">
-            <li><span>直径</span><b>471.6 km</b></li>
-            <li><span>轨道半径</span><b>129,390 km</b></li>
-            <li><span>轨道周期</span><b>1.41 天</b></li>
-            <li><span>发现</span><b>1948 年 · 杰拉德·柯伊伯</b></li>
-          </ul>
-          <p class="desc">五颗主卫星中最小的一颗，表面却极其破碎、地质历史复杂。其“维罗纳断崖”（Verona Rupes）高达约 20 公里，是太阳系已知最高的悬崖；巨大的人字形（chevron）地貌与混杂的断裂地形，暗示它可能经历过剧烈的撞击碎裂与重新拼合。</p>
-        </div>
-      </article>
-
-      <article class="moon-card" id="card_阿里尔">
-        <div class="card-img"><img src="img/ariel.jpg" alt="阿里尔（Ariel）的影像" loading="lazy"></div>
-        <div class="card-body">
-          <h3>阿里尔 <span class="en">Ariel</span></h3>
-          <p class="order">天卫一</p>
-          <ul class="stats">
-            <li><span>直径</span><b>1,157.8 km</b></li>
-            <li><span>轨道半径</span><b>190,900 km</b></li>
-            <li><span>轨道周期</span><b>2.52 天</b></li>
-            <li><span>发现</span><b>1851 年 · 威廉·拉塞尔</b></li>
-          </ul>
-          <p class="desc">五颗主卫星中表面最亮、也最年轻的一颗。遍布深邃的峡谷与裂谷，冰与岩石混合，平坦谷底暗示可能存在过（甚至仍在进行）的冰火山活动，是研究天王星卫星地质演化的关键对象。</p>
-        </div>
-      </article>
-
-      <article class="moon-card" id="card_乌姆柏里厄尔">
-        <div class="card-img"><img src="img/umbriel.jpg" alt="乌姆柏里厄尔（Umbriel）的影像" loading="lazy"></div>
-        <div class="card-body">
-          <h3>乌姆柏里厄尔 <span class="en">Umbriel</span></h3>
-          <p class="order">天卫二</p>
-          <ul class="stats">
-            <li><span>直径</span><b>1,169.4 km</b></li>
-            <li><span>轨道半径</span><b>266,000 km</b></li>
-            <li><span>轨道周期</span><b>4.14 天</b></li>
-            <li><span>发现</span><b>1851 年 · 威廉·拉塞尔</b></li>
-          </ul>
-          <p class="desc">五颗主卫星中最暗的一颗，表面古老而布满撞击坑。最醒目的特征是沃达撞击坑（Wunda）——坑底有一圈明亮的高反照率物质，在暗色地表上格外耀眼，成因至今仍是个谜。</p>
-        </div>
-      </article>
-
-      <article class="moon-card" id="card_泰坦尼亚">
-        <div class="card-img"><img src="img/titania.jpg" alt="泰坦尼亚（Titania）的影像" loading="lazy"></div>
-        <div class="card-body">
-          <h3>泰坦尼亚 <span class="en">Titania</span></h3>
-          <p class="order">天卫三（天王星最大卫星）</p>
-          <ul class="stats">
-            <li><span>直径</span><b>1,576.8 km</b></li>
-            <li><span>轨道半径</span><b>435,910 km</b></li>
-            <li><span>轨道周期</span><b>8.71 天</b></li>
-            <li><span>发现</span><b>1787 年 · 威廉·赫歇尔</b></li>
-          </ul>
-          <p class="desc">天王星最大的卫星，也是太阳系第八大卫星。表面有长达千公里的巨大峡谷断层（如墨西拿峡谷 Messina Chasma），并可能有冰火山活动的痕迹，整体由冰与岩石大致各半组成。</p>
-        </div>
-      </article>
-
-      <article class="moon-card" id="card_欧贝隆">
-        <div class="card-img"><img src="img/oberon.jpg" alt="欧贝隆（Oberon）的影像" loading="lazy"></div>
-        <div class="card-body">
-          <h3>欧贝隆 <span class="en">Oberon</span></h3>
-          <p class="order">天卫四（最外层主卫星）</p>
-          <ul class="stats">
-            <li><span>直径</span><b>1,522.8 km</b></li>
-            <li><span>轨道半径</span><b>583,520 km</b></li>
-            <li><span>轨道周期</span><b>13.46 天</b></li>
-            <li><span>发现</span><b>1787 年 · 威廉·赫歇尔</b></li>
-          </ul>
-          <p class="desc">五颗主卫星中离天王星最远的一颗，表面古老、撞击坑密布，坑底常见暗色沉积物，部分大坑中央又有高反差的明亮物质，显示出复杂而悠久的撞击历史。</p>
-        </div>
-      </article>
+    <div class="sec-head">
+      <div class="kicker" data-i18n="sec_major_k">主卫星详解</div>
+      <h2><span data-i18n="sec_major_t">五颗主卫星</span><span class="en">The Five Major Moons</span></h2>
+      <p class="lead" data-i18n="sec_major_l">均以莎士比亚与蒲柏作品中的人物命名。</p>
     </div>
+    <div class="cards-grid" id="majorCards"></div>
   </div>
 </section>
 
-<section id="others">
+<section id="inner">
   <div class="wrap">
-    <h2>内卫星与不规则卫星 <span class="en">Inner &amp; Irregular Moons</span></h2>
-    <p class="lead">除 5 颗主卫星外，天王星还有 13 颗内卫星与 9 颗不规则卫星；另有 2 颗 2023–2025 年新发现、尚未命名的卫星（S/2023 U1、S/2025 U1），使总数达 29 颗。</p>
-    <div class="lists">
-      <div class="list-box">
-        <h3>内卫星（13 颗）</h3>
-        <p class="hint">轨道都在米兰达以内，与天王星环同源，均为暗色小天体。</p>
-        <ul><li><span class="zh">考狄利娅</span><span class="en">Cordelia</span></li><li><span class="zh">奥菲莉亚</span><span class="en">Ophelia</span></li><li><span class="zh">比安卡</span><span class="en">Bianca</span></li><li><span class="zh">克瑞西达</span><span class="en">Cressida</span></li><li><span class="zh">苔丝狄蒙娜</span><span class="en">Desdemona</span></li><li><span class="zh">朱丽叶</span><span class="en">Juliet</span></li><li><span class="zh">波西亚</span><span class="en">Portia</span></li><li><span class="zh">罗莎琳德</span><span class="en">Rosalind</span></li><li><span class="zh">丘比特</span><span class="en">Cupid</span></li><li><span class="zh">贝琳达</span><span class="en">Belinda</span></li><li><span class="zh">珀迪塔</span><span class="en">Perdita</span></li><li><span class="zh">普克</span><span class="en">Puck</span></li><li><span class="zh">玛布</span><span class="en">Mab</span></li></ul>
-      </div>
-      <div class="list-box">
-        <h3>不规则卫星（9 颗）</h3>
-        <p class="hint">轨道遥远、高度倾斜，大多为逆行轨道，可能是被捕获的天体。</p>
-        <ul><li><span class="zh">弗朗西斯科</span><span class="en">Francisco</span></li><li><span class="zh">卡利班</span><span class="en">Caliban</span></li><li><span class="zh">斯蒂法诺</span><span class="en">Stephano</span></li><li><span class="zh">特林库洛</span><span class="en">Trinculo</span></li><li><span class="zh">西科拉克斯</span><span class="en">Sycorax</span></li><li><span class="zh">玛格丽特</span><span class="en">Margaret</span></li><li><span class="zh">普洛斯彼罗</span><span class="en">Prospero</span></li><li><span class="zh">塞特波斯</span><span class="en">Setebos</span></li><li><span class="zh">费迪南德</span><span class="en">Ferdinand</span></li></ul>
-      </div>
+    <div class="sec-head">
+      <div class="kicker" data-i18n="sec_inner_k">内卫星</div>
+      <h2><span data-i18n="sec_inner_t">内卫星（14 颗）</span><span class="en">Inner Moons</span></h2>
+      <p class="lead" data-i18n="sec_inner_l">轨道都在米兰达以内，与天王星环同源。点击查看详情。</p>
     </div>
+    <div class="legend">
+      <span class="item" data-i18n="legend_hint">卫星分类：</span>
+      <span class="item"><span class="sw major"></span> <span data-i18n="group_major">主卫星</span></span>
+      <span class="item"><span class="sw inner"></span> <span data-i18n="group_inner">内卫星</span></span>
+      <span class="item"><span class="sw irregular"></span> <span data-i18n="group_irregular">不规则卫星</span></span>
+    </div>
+    <div class="small-grid" id="innerGrid"></div>
+  </div>
+</section>
+
+<section id="irregular">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="sec_irr_k">不规则卫星</div>
+      <h2><span data-i18n="sec_irr_t">不规则卫星（10 颗）</span><span class="en">Irregular Moons</span></h2>
+      <p class="lead" data-i18n="sec_irr_l">轨道遥远、高度倾斜，大多逆行。点击查看详情。</p>
+    </div>
+    <div class="small-grid" id="irregularGrid"></div>
   </div>
 </section>
 
 <footer id="sources">
-  <p>影像来源：NASA / 旅行者 2 号、詹姆斯·韦布空间望远镜（ESA / CSA / STScI），均为公共领域影像。</p>
-  <p>数据参考：NASA 行星科学事实表（Planetary Fact Sheet）、维基百科“天王星的卫星”（Moons of Uranus，截至 2025 年）。</p>
+  <p data-i18n="footer_src">影像来源：NASA / 旅行者 2 号、韦布、哈勃及地面天文台。</p>
+  <p data-i18n="footer_ref">数据参考：NASA 行星事实表、维基百科“天王星的卫星”。</p>
+  <p style="color:var(--accent);font-weight:600;" data-i18n="footer_made">共 29 颗已知卫星</p>
 </footer>
 
 <script>
-const MOONS = [{"name": "米兰达", "en": "Miranda", "img": "img/miranda.jpg", "diameter": "471.6 km", "radius": "129,390 km", "period": "1.41 天", "discoverer": "1948 年 · 杰拉德·柯伊伯", "order": "天卫五（最内侧主卫星）", "desc": "五颗主卫星中最小的一颗，表面却极其破碎、地质历史复杂。其“维罗纳断崖”（Verona Rupes）高达约 20 公里，是太阳系已知最高的悬崖；巨大的人字形（chevron）地貌与混杂的断裂地形，暗示它可能经历过剧烈的撞击碎裂与重新拼合。"}, {"name": "阿里尔", "en": "Ariel", "img": "img/ariel.jpg", "diameter": "1,157.8 km", "radius": "190,900 km", "period": "2.52 天", "discoverer": "1851 年 · 威廉·拉塞尔", "order": "天卫一", "desc": "五颗主卫星中表面最亮、也最年轻的一颗。遍布深邃的峡谷与裂谷，冰与岩石混合，平坦谷底暗示可能存在过（甚至仍在进行）的冰火山活动，是研究天王星卫星地质演化的关键对象。"}, {"name": "乌姆柏里厄尔", "en": "Umbriel", "img": "img/umbriel.jpg", "diameter": "1,169.4 km", "radius": "266,000 km", "period": "4.14 天", "discoverer": "1851 年 · 威廉·拉塞尔", "order": "天卫二", "desc": "五颗主卫星中最暗的一颗，表面古老而布满撞击坑。最醒目的特征是沃达撞击坑（Wunda）——坑底有一圈明亮的高反照率物质，在暗色地表上格外耀眼，成因至今仍是个谜。"}, {"name": "泰坦尼亚", "en": "Titania", "img": "img/titania.jpg", "diameter": "1,576.8 km", "radius": "435,910 km", "period": "8.71 天", "discoverer": "1787 年 · 威廉·赫歇尔", "order": "天卫三（天王星最大卫星）", "desc": "天王星最大的卫星，也是太阳系第八大卫星。表面有长达千公里的巨大峡谷断层（如墨西拿峡谷 Messina Chasma），并可能有冰火山活动的痕迹，整体由冰与岩石大致各半组成。"}, {"name": "欧贝隆", "en": "Oberon", "img": "img/oberon.jpg", "diameter": "1,522.8 km", "radius": "583,520 km", "period": "13.46 天", "discoverer": "1787 年 · 威廉·赫歇尔", "order": "天卫四（最外层主卫星）", "desc": "五颗主卫星中离天王星最远的一颗，表面古老、撞击坑密布，坑底常见暗色沉积物，部分大坑中央又有高反差的明亮物质，显示出复杂而悠久的撞击历史。"}];
-function showMoon(name) {
-  const m = MOONS.find(function(x){ return x.name === name; });
-  if (!m) return;
-  document.getElementById('detailImg').src = m.img;
-  document.getElementById('detailImg').alt = m.name + '（' + m.en + '）的影像';
-  document.getElementById('detailName').innerHTML = m.name + ' <span class="en">' + m.en + '</span>';
-  document.getElementById('detailOrder').textContent = m.order;
-  document.getElementById('detailDesc').textContent = m.desc;
-  document.getElementById('detailStats').innerHTML =
-    '<li><span>直径</span><b>' + m.diameter + '</b></li>' +
-    '<li><span>轨道半径</span><b>' + m.radius + '</b></li>' +
-    '<li><span>轨道周期</span><b>' + m.period + '</b></li>' +
-    '<li><span>发现</span><b>' + m.discoverer + '</b></li>';
-  document.getElementById('detailPanel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+const MOONS = [{"id": "miranda", "name": {"zh": "米兰达", "en": "Miranda"}, "group": "major", "img": "img/miranda.jpg", "diam": "471.6 km", "axis": "129,846 km", "period": {"zh": "1.41 天", "en": "1.41 d"}, "discovered": {"zh": "1948 · 杰拉德·柯伊伯", "en": "1948 · Gerard Kuiper"}, "note": {"zh": "天卫五", "en": "Uranus V"}, "desc": {"zh": "五颗主卫星中最小的一颗，表面却极其破碎、地质历史复杂。其“维罗纳断崖”（Verona Rupes）高达约 20 公里，是太阳系已知最高的悬崖；巨大的人字形（chevron）地貌与混杂的断裂地形，暗示它可能经历过剧烈的撞击碎裂与重新拼合。", "en": "The smallest of the five major moons, Miranda has a remarkably fractured surface and a complex history. Its Verona Rupes cliff rises about 20 km — the tallest known cliff in the Solar System — while giant chevron-shaped features and chaotic faulted terrain hint at a violent past of shattering and re-accretion."}}, {"id": "ariel", "name": {"zh": "阿里尔", "en": "Ariel"}, "group": "major", "img": "img/ariel.jpg", "diam": "1,157.8 km", "axis": "190,929 km", "period": {"zh": "2.52 天", "en": "2.52 d"}, "discovered": {"zh": "1851 · 威廉·拉塞尔", "en": "1851 · William Lassell"}, "note": {"zh": "天卫一", "en": "Uranus I"}, "desc": {"zh": "五颗主卫星中表面最亮、也最年轻的一颗。遍布深邃的峡谷与裂谷，冰与岩石混合，平坦谷底暗示可能存在过（甚至仍在进行）的冰火山活动，是研究天王星卫星地质演化的关键对象。", "en": "The brightest and youngest surface among the major moons. Ariel is crossed by deep canyons and rift valleys of mixed ice and rock; smooth valley floors hint at past — possibly ongoing — cryovolcanic activity, making it key to understanding the moons' geological evolution."}}, {"id": "umbriel", "name": {"zh": "乌姆柏里厄尔", "en": "Umbriel"}, "group": "major", "img": "img/umbriel.jpg", "diam": "1,169.4 km", "axis": "265,986 km", "period": {"zh": "4.14 天", "en": "4.14 d"}, "discovered": {"zh": "1851 · 威廉·拉塞尔", "en": "1851 · William Lassell"}, "note": {"zh": "天卫二", "en": "Uranus II"}, "desc": {"zh": "五颗主卫星中最暗的一颗，表面古老而布满撞击坑。最醒目的特征是沃达撞击坑（Wunda）——坑底有一圈明亮的高反照率物质，在暗色地表上格外耀眼，成因至今仍是个谜。", "en": "The darkest of the five major moons, Umbriel has an ancient, heavily cratered surface. Its most striking feature is the crater Wunda, whose floor bears a bright ring of high-albedo material that stands out sharply against the dark terrain — its origin remains a mystery."}}, {"id": "titania", "name": {"zh": "泰坦尼亚", "en": "Titania"}, "group": "major", "img": "img/titania.jpg", "diam": "1,576.8 km", "axis": "436,298 km", "period": {"zh": "8.71 天", "en": "8.71 d"}, "discovered": {"zh": "1787 · 威廉·赫歇尔", "en": "1787 · William Herschel"}, "note": {"zh": "天卫三", "en": "Uranus III"}, "desc": {"zh": "天王星最大的卫星，也是太阳系第八大卫星。表面有长达千公里的巨大峡谷断层（如墨西拿峡谷 Messina Chasma），并可能有冰火山活动的痕迹，整体由冰与岩石大致各半组成。", "en": "The largest moon of Uranus and the eighth-largest in the Solar System. Titania is cut by enormous canyon systems up to a thousand kilometres long (e.g. Messina Chasma) and shows possible signs of cryovolcanism, being composed of roughly equal parts ice and rock."}}, {"id": "oberon", "name": {"zh": "欧贝隆", "en": "Oberon"}, "group": "major", "img": "img/oberon.jpg", "diam": "1,522.8 km", "axis": "583,511 km", "period": {"zh": "13.46 天", "en": "13.46 d"}, "discovered": {"zh": "1787 · 威廉·赫歇尔", "en": "1787 · William Herschel"}, "note": {"zh": "天卫四", "en": "Uranus IV"}, "desc": {"zh": "五颗主卫星中离天王星最远的一颗，表面古老、撞击坑密布，坑底常见暗色沉积物，部分大坑中央又有高反差的明亮物质，显示出复杂而悠久的撞击历史。", "en": "The outermost of the major moons, Oberon has an old, densely cratered surface. Many craters hold dark deposits on their floors, while some large craters show bright material at their centres, recording a long and complex impact history."}}, {"id": "cordelia", "name": {"zh": "考狄利娅", "en": "Cordelia"}, "group": "inner", "img": "img/cordelia.jpg", "diam": "40 km", "axis": "49,755 km", "period": {"zh": "0.33 天", "en": "0.33 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "ε 环内牧羊卫星", "en": "ε-ring inner shepherd"}, "desc": {"zh": "ε 环的内侧牧羊卫星，与奥菲莉亚一起用引力把 ε 环约束在狭窄范围内。", "en": "Inner shepherd moon of the ε ring; together with Ophelia its gravity keeps the ring confined to a narrow band."}}, {"id": "ophelia", "name": {"zh": "奥菲莉亚", "en": "Ophelia"}, "group": "inner", "img": "img/ophelia.png", "diam": "43 km", "axis": "53,765 km", "period": {"zh": "0.38 天", "en": "0.38 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "ε 环外牧羊卫星", "en": "ε-ring outer shepherd"}, "desc": {"zh": "ε 环的外侧牧羊卫星，与考狄利娅共同维持光环的形状。", "en": "Outer shepherd moon of the ε ring, helping Cordelia maintain the ring's shape."}}, {"id": "s2025u1", "name": {"zh": "S/2025 U1", "en": "S/2025 U1"}, "group": "inner", "img": "img/s2025u1.jpg", "diam": "≈8–10 km", "axis": "57,844 km", "period": {"zh": "0.42 天", "en": "0.42 d"}, "discovered": {"zh": "2025 · 韦布空间望远镜", "en": "2025 · JWST"}, "note": {"zh": "尚未命名", "en": "unnamed"}, "desc": {"zh": "2025 年由韦布空间望远镜（JWST）发现的新内卫星，尚未正式命名。", "en": "A new inner moon discovered in 2025 by the James Webb Space Telescope; not yet named."}}, {"id": "bianca", "name": {"zh": "比安卡", "en": "Bianca"}, "group": "inner", "img": "img/bianca.png", "diam": "51 km", "axis": "59,170 km", "period": {"zh": "0.43 天", "en": "0.43 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群（Portia group）成员，一组轨道相近的小卫星。", "en": "Member of the Portia group, a cluster of small moons on similar orbits."}}, {"id": "cressida", "name": {"zh": "克瑞西达", "en": "Cressida"}, "group": "inner", "img": "img/cressida.png", "diam": "80 km", "axis": "61,770 km", "period": {"zh": "0.46 天", "en": "0.46 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群成员。", "en": "Member of the Portia group."}}, {"id": "desdemona", "name": {"zh": "苔丝狄蒙娜", "en": "Desdemona"}, "group": "inner", "img": "img/desdemona.png", "diam": "64 km", "axis": "62,663 km", "period": {"zh": "0.47 天", "en": "0.47 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群成员。", "en": "Member of the Portia group."}}, {"id": "juliet", "name": {"zh": "朱丽叶", "en": "Juliet"}, "group": "inner", "img": "img/juliet.png", "diam": "94 km", "axis": "64,362 km", "period": {"zh": "0.49 天", "en": "0.49 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群成员。", "en": "Member of the Portia group."}}, {"id": "portia", "name": {"zh": "波西亚", "en": "Portia"}, "group": "inner", "img": "img/portia.jpg", "diam": "135 km", "axis": "66,101 km", "period": {"zh": "0.51 天", "en": "0.51 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群中最大的一颗，该群因此得名。", "en": "The largest of the Portia group, after which the cluster is named."}}, {"id": "rosalind", "name": {"zh": "罗莎琳德", "en": "Rosalind"}, "group": "inner", "img": "img/rosalind.png", "diam": "72 km", "axis": "69,930 km", "period": {"zh": "0.56 天", "en": "0.56 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "波西亚群", "en": "Portia group"}, "desc": {"zh": "波西亚群成员。", "en": "Member of the Portia group."}}, {"id": "cupid", "name": {"zh": "丘比特", "en": "Cupid"}, "group": "inner", "img": "img/cupid.png", "diam": "≈18 km", "axis": "74,396 km", "period": {"zh": "0.61 天", "en": "0.61 d"}, "discovered": {"zh": "2003 · 哈勃空间望远镜", "en": "2003 · Hubble"}, "note": {"zh": "贝琳达群", "en": "Belinda group"}, "desc": {"zh": "已知最小的内卫星之一，由哈勃空间望远镜发现。", "en": "Among the smallest inner moons, discovered with the Hubble Space Telescope."}}, {"id": "belinda", "name": {"zh": "贝琳达", "en": "Belinda"}, "group": "inner", "img": "img/belinda.png", "diam": "90 km", "axis": "75,258 km", "period": {"zh": "0.62 天", "en": "0.62 d"}, "discovered": {"zh": "1986 · 旅行者 2 号", "en": "1986 · Voyager 2"}, "note": {"zh": "贝琳达群", "en": "Belinda group"}, "desc": {"zh": "贝琳达群成员。", "en": "Member of the Belinda group."}}, {"id": "perdita", "name": {"zh": "珀迪塔", "en": "Perdita"}, "group": "inner", "img": "img/perdita.png", "diam": "30 km", "axis": "76,418 km", "period": {"zh": "0.64 天", "en": "0.64 d"}, "discovered": {"zh": "1999 · 旅行者 2 号旧影像", "en": "1999 · Voyager 2 archive"}, "note": {"zh": "贝琳达群", "en": "Belinda group"}, "desc": {"zh": "直到 1999 年才从旅行者 2 号拍摄的旧影像中被辨识出来。", "en": "Identified only in 1999 from archived Voyager 2 images."}}, {"id": "puck", "name": {"zh": "普克", "en": "Puck"}, "group": "inner", "img": "img/puck.png", "diam": "162 km", "axis": "86,004 km", "period": {"zh": "0.76 天", "en": "0.76 d"}, "discovered": {"zh": "1985 · 旅行者 2 号", "en": "1985 · Voyager 2"}, "note": {"zh": "最大的内卫星", "en": "largest inner moon"}, "desc": {"zh": "最大的内卫星，也是旅行者 2 号拍摄到的第一颗天王星卫星。", "en": "The largest inner moon, and the first Uranian moon imaged by Voyager 2."}}, {"id": "mab", "name": {"zh": "玛布", "en": "Mab"}, "group": "inner", "img": "img/mab.png", "diam": "≈18 km", "axis": "97,737 km", "period": {"zh": "0.92 天", "en": "0.92 d"}, "discovered": {"zh": "2003 · 哈勃空间望远镜", "en": "2003 · Hubble"}, "note": {"zh": "μ 环来源", "en": "μ-ring source"}, "desc": {"zh": "μ 环的来源——它散落的尘埃构成了这条光环。", "en": "Source of the μ ring — its shed dust forms the ring."}}, {"id": "francisco", "name": {"zh": "弗朗西斯科", "en": "Francisco"}, "group": "irregular", "img": "img/francisco.png", "diam": "≈22 km", "axis": "4,275,700 km", "period": {"zh": "267 天（逆行）", "en": "267 d (retrograde)"}, "discovered": {"zh": "2001 · 地面望远镜", "en": "2001 · ground telescope"}, "note": {"zh": "逆行", "en": "retrograde"}, "desc": {"zh": "轨道最靠近天王星的不规则卫星之一。", "en": "Among the innermost of the irregular moons."}}, {"id": "caliban", "name": {"zh": "卡利班", "en": "Caliban"}, "group": "irregular", "img": "img/caliban.jpg", "diam": "≈42 km", "axis": "7,167,000 km", "period": {"zh": "580 天（逆行）", "en": "580 d (retrograde)"}, "discovered": {"zh": "1997 · 地面望远镜", "en": "1997 · ground telescope"}, "note": {"zh": "卡利班群 · 逆行", "en": "Caliban group · retrograde"}, "desc": {"zh": "卡利班群成员，逆行轨道。", "en": "Member of the Caliban group, on a retrograde orbit."}}, {"id": "stephano", "name": {"zh": "斯蒂法诺", "en": "Stephano"}, "group": "irregular", "img": "img/stephano.jpg", "diam": "≈32 km", "axis": "7,951,400 km", "period": {"zh": "677 天（逆行）", "en": "677 d (retrograde)"}, "discovered": {"zh": "1999 · 地面望远镜", "en": "1999 · ground telescope"}, "note": {"zh": "卡利班群 · 逆行", "en": "Caliban group · retrograde"}, "desc": {"zh": "卡利班群成员，逆行轨道。", "en": "Member of the Caliban group, retrograde."}}, {"id": "s2023u1", "name": {"zh": "S/2023 U1", "en": "S/2023 U1"}, "group": "irregular", "img": "", "diam": "≈8 km", "axis": "7,976,600 km", "period": {"zh": "681 天（逆行）", "en": "681 d (retrograde)"}, "discovered": {"zh": "2023 · 地面望远镜", "en": "2023 · ground telescope"}, "note": {"zh": "尚未命名 · 逆行", "en": "unnamed · retrograde"}, "desc": {"zh": "2023 年发现的卡利班群新成员，尚未正式命名。", "en": "A new Caliban-group member discovered in 2023; not yet named."}}, {"id": "trinculo", "name": {"zh": "特林库洛", "en": "Trinculo"}, "group": "irregular", "img": "img/trinculo.png", "diam": "≈18 km", "axis": "8,502,600 km", "period": {"zh": "749 天（逆行）", "en": "749 d (retrograde)"}, "discovered": {"zh": "2001 · 地面望远镜", "en": "2001 · ground telescope"}, "note": {"zh": "逆行", "en": "retrograde"}, "desc": {"zh": "逆行轨道的不规则卫星。", "en": "A retrograde irregular moon."}}, {"id": "sycorax", "name": {"zh": "西科拉克斯", "en": "Sycorax"}, "group": "irregular", "img": "img/sycorax.jpg", "diam": "≈157 km", "axis": "12,193,200 km", "period": {"zh": "1286 天（逆行）", "en": "1286 d (retrograde)"}, "discovered": {"zh": "1997 · 地面望远镜", "en": "1997 · ground telescope"}, "note": {"zh": "最大的不规则卫星", "en": "largest irregular"}, "desc": {"zh": "天王星最大的不规则卫星。", "en": "The largest irregular moon of Uranus."}}, {"id": "margaret", "name": {"zh": "玛格丽特", "en": "Margaret"}, "group": "irregular", "img": "img/margaret.png", "diam": "≈20 km", "axis": "14,425,000 km", "period": {"zh": "1655 天", "en": "1655 d"}, "discovered": {"zh": "2003 · 地面望远镜", "en": "2003 · ground telescope"}, "note": {"zh": "唯一顺行", "en": "only prograde"}, "desc": {"zh": "唯一沿顺行轨道运行的不规则卫星。", "en": "The only irregular moon on a prograde orbit."}}, {"id": "prospero", "name": {"zh": "普洛斯彼罗", "en": "Prospero"}, "group": "irregular", "img": "img/prospero.jpg", "diam": "≈50 km", "axis": "16,221,000 km", "period": {"zh": "1974 天（逆行）", "en": "1974 d (retrograde)"}, "discovered": {"zh": "1999 · 地面望远镜", "en": "1999 · ground telescope"}, "note": {"zh": "逆行", "en": "retrograde"}, "desc": {"zh": "逆行轨道的不规则卫星。", "en": "A retrograde irregular moon."}}, {"id": "setebos", "name": {"zh": "塞特波斯", "en": "Setebos"}, "group": "irregular", "img": "img/setebos.jpg", "diam": "≈47 km", "axis": "17,519,800 km", "period": {"zh": "2215 天（逆行）", "en": "2215 d (retrograde)"}, "discovered": {"zh": "1999 · 地面望远镜", "en": "1999 · ground telescope"}, "note": {"zh": "逆行", "en": "retrograde"}, "desc": {"zh": "逆行轨道的不规则卫星。", "en": "A retrograde irregular moon."}}, {"id": "ferdinand", "name": {"zh": "费迪南德", "en": "Ferdinand"}, "group": "irregular", "img": "img/ferdinand.png", "diam": "≈21 km", "axis": "20,421,400 km", "period": {"zh": "2788 天（逆行）", "en": "2788 d (retrograde)"}, "discovered": {"zh": "2001 · 地面望远镜", "en": "2001 · ground telescope"}, "note": {"zh": "最外层卫星", "en": "outermost moon"}, "desc": {"zh": "天王星已知最外层的卫星。", "en": "The outermost known moon of Uranus."}}];
+const FACTS = [[{"zh": "类型", "en": "Type"}, {"zh": "冰巨星", "en": "Ice giant"}], [{"zh": "太阳系位置", "en": "Position"}, {"zh": "第 7 颗行星", "en": "7th planet"}], [{"zh": "发现", "en": "Discovered"}, {"zh": "1781 · 威廉·赫歇尔", "en": "1781 · William Herschel"}], [{"zh": "直径", "en": "Diameter"}, {"zh": "约 50,724 km", "en": "≈ 50,724 km"}], [{"zh": "自转轴倾角", "en": "Axial tilt"}, {"zh": "约 97.8°", "en": "≈ 97.8°"}], [{"zh": "公转 / 自转周期", "en": "Orbital / rotation"}, {"zh": "约 84 年 / 约 17.2 小时", "en": "≈ 84 yr / ≈ 17.2 h"}], [{"zh": "光环", "en": "Rings"}, {"zh": "13 条已知光环", "en": "13 known rings"}], [{"zh": "卫星数量", "en": "Moons"}, {"zh": "29 颗", "en": "29 moons"}], [{"zh": "大气", "en": "Atmosphere"}, {"zh": "氢、氦、甲烷", "en": "H₂, He, CH₄"}], [{"zh": "表面温度", "en": "Temperature"}, {"zh": "约 −224 °C", "en": "≈ −224 °C"}]];
+const I18N = {"brand1": {"zh": "天王星", "en": "Uranus"}, "brand2": {"zh": "及其卫星", "en": " & its moons"}, "nav_overview": {"zh": "概览", "en": "Overview"}, "nav_portrait": {"zh": "主卫星图谱", "en": "Major moons"}, "nav_major": {"zh": "主卫星详解", "en": "Major moons"}, "nav_inner": {"zh": "内卫星", "en": "Inner moons"}, "nav_irregular": {"zh": "不规则卫星", "en": "Irregular moons"}, "nav_sources": {"zh": "来源", "en": "Sources"}, "badge1": {"zh": "太阳系第 7 颗行星", "en": "7th planet of the Solar System"}, "badge2": {"zh": "冰巨星", "en": "Ice giant"}, "badge3": {"zh": "颗已知卫星", "en": " known moons"}, "badge4": {"zh": "自转轴倾角约", "en": "Axial tilt ≈"}, "hero_title1": {"zh": "天王星及其", "en": "Uranus & its"}, "hero_title2": {"zh": "卫星", "en": "moons"}, "hero_sub": {"zh": "一颗“躺着”绕太阳公转的冰巨星，以及它的 5 颗主卫星、14 颗内卫星与 10 颗不规则卫星。", "en": "An ice giant that spins on its side — together with its 5 major moons, 14 inner moons and 10 irregular moons."}, "hero_credit": {"zh": "背景影像：詹姆斯·韦布空间望远镜 NIRCam 广角图（NASA / ESA / CSA / STScI）", "en": "Background: JWST NIRCam wide-field view (NASA / ESA / CSA / STScI)"}, "sec_overview_k": {"zh": "概览", "en": "OVERVIEW"}, "sec_overview_t": {"zh": "天王星概览", "en": "Uranus Overview"}, "sec_overview_l": {"zh": "太阳系的第七颗行星，一颗蓝绿色的冰巨星——甲烷大气吸收红光，使它呈现出独特的青绿色。", "en": "The seventh planet, a blue-green ice giant — methane in its atmosphere absorbs red light, giving it a distinctive cyan hue."}, "sec_portrait_k": {"zh": "主卫星", "en": "MAJOR MOONS"}, "sec_portrait_t": {"zh": "五大主卫星家族图谱", "en": "The Five Major Moons"}, "sec_portrait_l": {"zh": "点击任意一颗卫星查看详情。图中按轨道从内到外排列，大小与距离未按真实比例。", "en": "Click any moon for details. Moons are ordered by orbit; sizes and distances are not to scale."}, "portrait_center": {"zh": "天王星 Uranus", "en": "Uranus"}, "portrait_note": {"zh": "中心为天王星，四周依次为米兰达、阿里尔、乌姆柏里厄尔、泰坦尼亚、欧贝隆（旅行者 2 号影像）。", "en": "Uranus at centre, surrounded by Miranda, Ariel, Umbriel, Titania and Oberon (Voyager 2 images)."}, "detail_hint": {"zh": "点击上方图谱或下方列表中的任意卫星查看详情", "en": "Click any moon above or below to see its details"}, "stat_diam": {"zh": "直径", "en": "Diameter"}, "stat_axis": {"zh": "轨道半径", "en": "Orbital radius"}, "stat_period": {"zh": "轨道周期", "en": "Orbital period"}, "stat_disc": {"zh": "发现", "en": "Discovered"}, "group_major": {"zh": "主卫星", "en": "Major moon"}, "group_inner": {"zh": "内卫星", "en": "Inner moon"}, "group_irregular": {"zh": "不规则卫星", "en": "Irregular moon"}, "sec_major_k": {"zh": "主卫星详解", "en": "MAJOR MOONS"}, "sec_major_t": {"zh": "五颗主卫星", "en": "The Five Major Moons"}, "sec_major_l": {"zh": "均以莎士比亚与蒲柏作品中的人物命名，是天王星最大、最亮的五颗卫星。", "en": "Named after characters in Shakespeare and Pope; the five largest and brightest Uranian moons."}, "sec_inner_k": {"zh": "内卫星", "en": "INNER MOONS"}, "sec_inner_t": {"zh": "内卫星（14 颗）", "en": "Inner Moons (14)"}, "sec_inner_l": {"zh": "轨道都在米兰达以内，与天王星环同源，多为暗色小天体。点击查看详情。", "en": "All orbiting inside Miranda, sharing their origin with the rings — small, dark bodies. Click for details."}, "sec_irr_k": {"zh": "不规则卫星", "en": "IRREGULAR MOONS"}, "sec_irr_t": {"zh": "不规则卫星（10 颗）", "en": "Irregular Moons (10)"}, "sec_irr_l": {"zh": "轨道遥远、高度倾斜，大多逆行，可能是被捕获的天体。点击查看详情。", "en": "Distant, highly inclined and mostly retrograde — likely captured bodies. Click for details."}, "legend_hint": {"zh": "卫星分类：", "en": "Moon classes:"}, "noimg": {"zh": "影像暂无", "en": "No image"}, "footer_src": {"zh": "影像来源：NASA / 旅行者 2 号、詹姆斯·韦布空间望远镜（ESA / CSA / STScI）、哈勃空间望远镜及地面天文台，均为公共领域影像。", "en": "Images: NASA / Voyager 2, JWST (ESA/CSA/STScI), Hubble and ground-based observatories — all public domain."}, "footer_ref": {"zh": "数据参考：NASA 行星事实表、维基百科“天王星的卫星”（截至 2025 年）。", "en": "Data: NASA Planetary Fact Sheet; Wikipedia 'Moons of Uranus' (as of 2025)."}, "footer_made": {"zh": "共 29 颗已知卫星 · 5 主卫星 + 14 内卫星 + 10 不规则卫星", "en": "29 known moons · 5 major + 14 inner + 10 irregular"}};
+let LANG = 'zh';
+
+function t(key) { const e = I18N[key]; return e ? (e[LANG] || e.zh) : key; }
+
+function applyI18n() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = t(k);
+    else el.textContent = t(k);
+  });
+  // SVG 主卫星名称
+  document.querySelectorAll('[data-moon-label]').forEach(el => {
+    const m = MOONS.find(x => x.id === el.getAttribute('data-moon-label'));
+    if (m) el.textContent = m.name[LANG];
+  });
+  // 语言切换按钮状态
+  document.getElementById('btnZh').classList.toggle('on', LANG === 'zh');
+  document.getElementById('btnEn').classList.toggle('on', LANG === 'en');
+  renderAll();
 }
-window.addEventListener('DOMContentLoaded', function(){ showMoon('米兰达'); });
+
+function statRow(label, val) {
+  return '<li><span>' + t(label) + '</span><b>' + val + '</b></li>';
+}
+
+function groupTag(g) { return t('group_' + g); }
+
+function renderDetail(m) {
+  const img = m.img
+    ? '<img src="' + m.img + '" alt="' + m.name[LANG] + '">'
+    : '<div class="noimg">' + t('noimg') + '</div>';
+  document.getElementById('dpImg').innerHTML = img;
+  document.getElementById('dpName').innerHTML = m.name[LANG] + ' <span class="en">' + m.name[LANG === 'zh' ? 'en' : 'zh'] + '</span>';
+  const note = document.getElementById('dpNote');
+  note.textContent = m.note[LANG];
+  note.className = 'dp-note ' + m.group;
+  document.getElementById('dpStats').innerHTML =
+    statRow('stat_diam', m.diam) +
+    statRow('stat_axis', m.axis) +
+    statRow('stat_period', m.period[LANG]) +
+    statRow('stat_disc', m.discovered[LANG]);
+  document.getElementById('dpDesc').textContent = m.desc[LANG];
+  document.getElementById('dpPanel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function showMoon(id) {
+  const m = MOONS.find(x => x.id === id);
+  if (m) renderDetail(m);
+}
+
+function majorCard(m) {
+  const other = LANG === 'zh' ? 'en' : 'zh';
+  return '<article class="moon-card" data-moon-id="' + m.id + '">' +
+    '<div class="card-img"><img src="' + m.img + '" alt="' + m.name[LANG] + '" loading="lazy"></div>' +
+    '<div class="card-body">' +
+      '<h3>' + m.name[LANG] + ' <span class="en">' + m.name[other] + '</span></h3>' +
+      '<span class="tag ' + m.group + '">' + m.note[LANG] + '</span>' +
+      '<ul class="stats">' +
+        statRow('stat_diam', m.diam) +
+        statRow('stat_axis', m.axis) +
+        statRow('stat_period', m.period[LANG]) +
+        statRow('stat_disc', m.discovered[LANG]) +
+      '</ul>' +
+      '<p class="desc">' + m.desc[LANG] + '</p>' +
+    '</div></article>';
+}
+
+function smallCell(m) {
+  const other = LANG === 'zh' ? 'en' : 'zh';
+  const thumb = m.img
+    ? '<img src="' + m.img + '" alt="' + m.name[LANG] + '" loading="lazy">'
+    : '<span class="dot"></span>';
+  return '<button class="small-cell" data-moon-id="' + m.id + '" aria-label="' + m.name[LANG] + '">' +
+    '<span class="thumb ' + m.group + '">' + thumb + '</span>' +
+    '<span class="nm">' + m.name[LANG] + '<span class="en">' + m.name[other] + '</span></span>' +
+    '<span class="dia">' + m.diam + '</span>' +
+  '</button>';
+}
+
+function renderAll() {
+  const major = MOONS.filter(m => m.group === 'major');
+  const inner = MOONS.filter(m => m.group === 'inner');
+  const irr = MOONS.filter(m => m.group === 'irregular');
+  document.getElementById('majorCards').innerHTML = major.map(majorCard).join('');
+  document.getElementById('innerGrid').innerHTML = inner.map(smallCell).join('');
+  document.getElementById('irregularGrid').innerHTML = irr.map(smallCell).join('');
+  // 概览事实
+  document.getElementById('factsBox').innerHTML = FACTS.map(f =>
+    '<div class="fact"><dt>' + f[0][LANG] + '</dt><dd>' + f[1][LANG] + '</dd></div>'
+  ).join('');
+  // 事件绑定
+  document.querySelectorAll('[data-moon-id]').forEach(el => {
+    el.addEventListener('click', () => showMoon(el.getAttribute('data-moon-id')));
+  });
+  // 若当前详情为空，默认显示米兰达
+  if (!document.getElementById('dpName').textContent.trim()) {
+    const m = MOONS.find(x => x.id === 'miranda');
+    if (m) renderDetail(m);
+  }
+}
+
+function setLang(l) { LANG = l; applyI18n(); }
+
+window.addEventListener('DOMContentLoaded', () => {
+  applyI18n();
+  document.getElementById('btnZh').addEventListener('click', () => setLang('zh'));
+  document.getElementById('btnEn').addEventListener('click', () => setLang('en'));
+});
 </script>
 </body>
 </html>
